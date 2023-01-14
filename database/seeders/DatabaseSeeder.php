@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // Populate countries data from SQL file
+        $file_path = resource_path('sql/countries.sql');
+        DB::unprepared(
+            file_get_contents($file_path)
+        );
+
         \App\Models\User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
@@ -21,5 +28,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\User::factory(100)->create();
+        $this->call(ProjectStatusesTableSeeder::class);
     }
 }
