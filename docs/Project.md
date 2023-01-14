@@ -45,3 +45,11 @@ git branch --delete feature/logo
 
 $url = asset('images/simba.svg');
 ```
+
+# Step 3: Adding Project, Income & Expense
+
+```
+php artisan make:model Project -a 
+php artisan make:model Income -a
+php artisan make:model Expense -a
+```
