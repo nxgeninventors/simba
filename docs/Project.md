@@ -60,6 +60,7 @@ php artisan make:migration create_expense_statuses_table
 php artisan make:model Project -a 
 php artisan make:model Income -a
 php artisan make:model Expense -a
+php artisan make:model MeetingNote -a
 ```
 
 ## Populate countries data from sql
