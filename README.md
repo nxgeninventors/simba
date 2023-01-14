@@ -1,1 +1,1 @@
-<p align="center"><a href="https://nxgeninventors.com/" target="_blank"><img src="https://raw.githubusercontent.com/nxgeninventors/simba/af4be04ab82c3c7e4719974a2d6508b68836a564/public/images/simba.svg?token=AARB76ITKIRDNDOLYFASUF3DYKRW4" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://nxgeninventors.com/" target="_blank"><img src="https://raw.githubusercontent.com/nxgeninventors/simba/main/public/images/simba.svg" width="400" alt="Laravel Logo"></a></p>
