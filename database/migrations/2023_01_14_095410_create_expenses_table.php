@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('expense_status_id')->constrained('expense_statuses');
+            $table->text('notes')->nullable();
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('approved_by')->constrained('users');
+            $table->text('approver_notes')->nullable();
+            $table->timestamp('approved_at')->nullable();
+            $table->decimal('amount', 20, 2);
             $table->timestamps();
         });
     }

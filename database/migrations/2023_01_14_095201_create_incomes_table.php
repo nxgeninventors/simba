@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('incomes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('project_id')->constrained('projects');
+            $table->foreignId('user_id')->constrained('users');
+            $table->decimal('amount', 20, 2);
             $table->timestamps();
         });
     }
