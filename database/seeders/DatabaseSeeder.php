@@ -15,12 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        # Populate countries data from SQL file
+        // Populate countries data from SQL file
         $file_path = resource_path('sql/countries.sql');
         DB::unprepared(
             file_get_contents($file_path)
         );
-
 
         \App\Models\User::factory()->create([
             'name' => 'Admin',
