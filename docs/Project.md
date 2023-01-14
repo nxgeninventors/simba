@@ -38,5 +38,7 @@ git branch --delete feature/logo
 
 # create `images` dir under public folder
 
+# https://laravel.com/docs/9.x/helpers#method-asset
+
 $url = asset('images/simba.svg');
 ```
