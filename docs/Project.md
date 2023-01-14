@@ -2,6 +2,9 @@
 # Step 1: Authentication
 
 ```bash
+
+# https://bootcamp.laravel.com/blade/installation
+
 composer require laravel/breeze --dev
 
 # If you would like Breeze to include "dark mode" 
