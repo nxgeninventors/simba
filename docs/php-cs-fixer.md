@@ -1,5 +1,6 @@
 
 - https://dev.to/ibrarturi/setup-php-cs-fixer-for-laravel-project-44nf
+- https://gist.github.com/laravel-shift/cab527923ed2a109dda047b97d53c200
 
 In order to use `friendsofphp/php-cs-fixer in a Laravel project, you will need to first install the package using Composer. You can do this by running the following command in the root of your project:
 
