@@ -23,3 +23,9 @@ yarn dev
 ```
 admin@admin.com / admin123
 ```
+
+# Git local branch delete
+
+```
+git branch --delete feature/logo
+```
