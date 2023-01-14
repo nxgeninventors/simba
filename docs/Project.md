@@ -29,3 +29,14 @@ admin@admin.com / admin123
 ```
 git branch --delete feature/logo
 ```
+
+# LOGO 
+
+```php
+
+# The asset function generates a URL for an asset using the current scheme of the request (HTTP or HTTPS):
+
+# create `images` dir under public folder
+
+$url = asset('images/simba.svg');
+```
