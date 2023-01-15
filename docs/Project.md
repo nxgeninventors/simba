@@ -79,3 +79,5 @@ DB::unprepared(
 );
 
 ```
+
+# Laravel Pint

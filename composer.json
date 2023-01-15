@@ -9,7 +9,8 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "tinymce/tinymce": "^6.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -48,7 +49,10 @@
             "@php artisan key:generate --ansi"
         ],
         "lint": [
-            "./vendor/bin/pint"
+            "./vendor/bin/pint -v"
+        ],
+        "lint-dryrun": [
+            "./vendor/bin/pint --test"
         ]
     },
     "extra": {
