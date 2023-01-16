@@ -13,7 +13,7 @@ class StoreMeetingNoteRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class StoreMeetingNoteRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'meeting_title' => 'required',
+            'meeting_notes' => 'required',
         ];
     }
 }

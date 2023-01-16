@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMeetingNoteRequest;
 use App\Http\Requests\UpdateMeetingNoteRequest;
 use App\Models\MeetingNote;
+use Illuminate\Http\Request;
 
 class MeetingNoteController extends Controller
 {
@@ -15,7 +16,7 @@ class MeetingNoteController extends Controller
      */
     public function index()
     {
-        //
+        print_r("Index");exit;
     }
 
     /**
@@ -25,7 +26,7 @@ class MeetingNoteController extends Controller
      */
     public function create()
     {
-        //
+        return view('meeting-notes.create');
     }
 
     /**
@@ -36,7 +37,11 @@ class MeetingNoteController extends Controller
      */
     public function store(StoreMeetingNoteRequest $request)
     {
-        //
+        $meetingNote = new MeetingNote();
+        $meetingNote->meeting_title = $request['meeting_title'];
+        $meetingNote->meeting_notes = $request['meeting_notes'];
+        $meetingNote->save();
+        return redirect()->route('meeting-notes.index')->with('success', 'Meeting notes successfully created.');
     }
 
     /**
@@ -58,7 +63,7 @@ class MeetingNoteController extends Controller
      */
     public function edit(MeetingNote $meetingNote)
     {
-        //
+        return view('meeting-notes.edit', compact('meetingNote'));
     }
 
     /**
@@ -70,7 +75,8 @@ class MeetingNoteController extends Controller
      */
     public function update(UpdateMeetingNoteRequest $request, MeetingNote $meetingNote)
     {
-        //
+        $meetingNote->update($request->all());
+        return redirect()->route('meeting-notes.index')->with('success', 'Meeting notes successfully updated.');
     }
 
     /**

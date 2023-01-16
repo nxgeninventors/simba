@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('meeting_notes', function (Blueprint $table) {
             $table->id();
+            $table->string('meeting_title', 255)->unique();
+            $table->text('meeting_notes');
             $table->timestamps();
         });
     }
