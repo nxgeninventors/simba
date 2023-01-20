@@ -1,0 +1,52 @@
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background: linear-gradient(
+        to bottom,
+        rgb(27 86 219) 0%,
+        rgb(14 39 98) 100%
+    );
+    color: #fff !important;
+}
+
+.dataTables_paginate {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.dataTable tbody tr:hover td {
+    color: #fff !important;
+}
+
+.odd-row,
+.odd-row:hover {
+    border-bottom-width: 1px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important;
+
+    td {
+        color: #000 !important;
+    }
+}
+
+.even-row,
+.even-row:hover {
+    border-bottom-width: 1px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+    
+    td {
+        color: #000 !important;
+    }
+}
+
+
+
+tr.odd-row:hover td {
+    color: #3e3838 !important;
+} 
+
+@media screen and (min-width: 768px) {
+    .dataTables_info {
+        margin: 8px;
+    }
+}

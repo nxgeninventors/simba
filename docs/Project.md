@@ -61,6 +61,9 @@ php artisan make:model Project -a
 php artisan make:model Income -a
 php artisan make:model Expense -a
 php artisan make:model MeetingNote -a
+
+
+php artisan make:controller Api/MeetingNotesController --api
 ```
 
 ## Populate countries data from sql
@@ -77,5 +80,40 @@ $file_path = resource_path('sql/countries.sql');
 DB::unprepared(
     file_get_contents($file_path)
 );
+
+```
+
+# Laravel Pint
+
+# ADD scss support
+
+```bash
+yarn add sass -D
+```
+
+```js
+# update vite.config.s
+
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: [
+                'resources/css/app.scss',
+                'resources/js/app.js',
+            ],
+            refresh: true,
+        }),
+    ],
+});
+
+```
+
+```php
+
+# Update layout file 
+@vite(['resources/css/app.scss', 'resources/js/app.js'])
 
 ```
