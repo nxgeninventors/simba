@@ -117,3 +117,22 @@ export default defineConfig({
 @vite(['resources/css/app.scss', 'resources/js/app.js'])
 
 ```
+
+
+# Add New User
+
+```php
+
+# use terminal
+php artisan tinker
+
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
+User::create([
+    'name' => "Santhosh",
+    'email' => "sandy@nxgeninventors.com",
+    'password' => Hash::make("sandy@123"),
+]);
+
+```
