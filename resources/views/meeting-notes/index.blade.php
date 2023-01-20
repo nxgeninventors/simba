@@ -5,11 +5,15 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <script src="{{ asset('lib/js/tinymce/tinymce.min.js') }}"></script>
+
+    <div class="py-12 data-ctrl" data-ctrl="MeetingNotesCtrl">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100 min-h-screen">
-                    <h1>Welcome to Nx Gen</h1>
+                    <h2>Meeting Notes</h2>
+                    <table style="width: 100%; overflow: hidden" id="meeting_notes_table">
+                    </table>
                 </div>
             </div>
         </div>

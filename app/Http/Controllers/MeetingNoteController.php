@@ -16,7 +16,7 @@ class MeetingNoteController extends Controller
      */
     public function index()
     {
-        print_r("Index");exit;
+        return view('meeting-notes.index');
     }
 
     /**
