@@ -24,6 +24,10 @@ Route::get('/customers', function () {
     return view('customers');
 })->middleware(['auth', 'verified'])->name('customers');
 
+Route::get('/projects', function () {
+    return view('customers');
+})->middleware(['auth', 'verified'])->name('projects');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
