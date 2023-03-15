@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\ClientsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +39,9 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('meeting-notes', App\Http\Controllers\MeetingNoteController::class);
 });
+
+Route::get('/clients',[ClientsController::class,'show']);
+Route::post('/client_save',[ClientsController::class,'store']);
 
 
 require __DIR__.'/auth.php';
