@@ -13,7 +13,6 @@ export const ExpensesConfig = {
         { data: "expense_status.name", title: "Expense Status" },
         { data: "amount", title: "Amount" },
         { data: "created_at", title: "Created at" },
-
         {
             data: null,
             title: "Actions",
