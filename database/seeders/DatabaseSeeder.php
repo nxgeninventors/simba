@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Income;
+use App\Models\Expense;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,8 +32,14 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(100)->create();
 
         $this->call([
+            ExpenseStatusSeeder::class,
             ProjectStatusesTableSeeder::class,
-            ProjectCategoriesSeeder::class
+            ProjectCategoriesSeeder::class,
+            ClientsTableSeeder::class,
+            ProjectSeeder::class,
         ]);
+
+        Income::factory()->count(50)->create();
+        Expense::factory()->count(50)->create();
     }
 }

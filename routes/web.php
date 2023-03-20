@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('meeting-notes', App\Http\Controllers\MeetingNoteController::class);
+    Route::resource('projects', App\Http\Controllers\ProjectController::class);
 });
 
 

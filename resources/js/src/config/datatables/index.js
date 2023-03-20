@@ -21,3 +21,4 @@ export const EmptyTableResponse = {
 export { ClientsConfig } from "./clients";
 export { UsersConfig } from "./users";
 export { MeetingNotesConfig } from "./config/meeting_notes";
+export { ProjectsConfig } from "./projects";
