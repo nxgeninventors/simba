@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\ProjectCategory;
+use App\Models\ProjectStatus;
+use App\Models\Client;
+use App\Models\User;
 
 class ProjectController extends Controller
 {
@@ -15,7 +20,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::all();
+        return view('projects.index', compact('projects'));
     }
 
     /**
@@ -25,62 +31,77 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        $categories = ProjectCategory::all();
+        $statuses = ProjectStatus::all();
+        $clients = Client::all();
+        $users = User::all();
+        return view('projects.create', compact('categories', 'statuses', 'clients', 'users'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreProjectRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // public function store(Request $request)
     public function store(StoreProjectRequest $request)
     {
-        //
+        $project = Project::create($request->validated());
+        return redirect()->route('projects.show', $project->id);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Project  $project
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function show($id)
     public function show(Project $project)
     {
-        //
+        return view('projects.show', compact('project'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Project  $project
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function edit($id)
     public function edit(Project $project)
     {
-        //
+        $categories = ProjectCategory::all();
+        $statuses = ProjectStatus::all();
+        $clients = Client::all();
+        $users = User::all();
+        return view('projects.edit', compact('project', 'categories', 'statuses', 'clients', 'users'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateProjectRequest  $request
-     * @param  \App\Models\Project  $project
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function update(Request $request, $id)
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $project->update($request->validated());
+        return redirect()->route('projects.show', $project->id);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Project  $project
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect()->route('projects.index');
     }
 }

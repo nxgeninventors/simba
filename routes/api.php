@@ -26,3 +26,6 @@ Route::middleware(['auth:api', 'verified'])->group(function(){
 */
 
 Route::resource('meeting-notes', App\Http\Controllers\Api\MeetingNotesController::class);
+Route::resource('projects', App\Http\Controllers\Api\ProjectsController::class);
+Route::resource('income', App\Http\Controllers\Api\IncomesController::class);
+Route::resource('expense', App\Http\Controllers\Api\ExpensesController::class);

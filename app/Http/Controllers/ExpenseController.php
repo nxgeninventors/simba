@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
 use App\Models\Expense;
+use App\Models\User;
+use App\Models\ExpenseStatus;
 
 class ExpenseController extends Controller
 {
@@ -15,7 +17,7 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        //
+        return view('expenses.index');
     }
 
     /**
@@ -25,7 +27,10 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+        $expenseStatuses = ExpenseStatus::all();
+
+        return view('expenses.create', compact('users', 'expenseStatuses'));
     }
 
     /**
@@ -58,7 +63,7 @@ class ExpenseController extends Controller
      */
     public function edit(Expense $expense)
     {
-        //
+        return view('expenses.edit', compact('expense'));
     }
 
     /**
@@ -70,7 +75,8 @@ class ExpenseController extends Controller
      */
     public function update(UpdateExpenseRequest $request, Expense $expense)
     {
-        //
+        $expense->update($request->all());
+        return redirect()->route('expenses.index')->with('success', 'Expense has been updated successfully.');
     }
 
     /**
@@ -81,6 +87,7 @@ class ExpenseController extends Controller
      */
     public function destroy(Expense $expense)
     {
-        //
+        $expense->delete();
+        return redirect()->route('expenses.index');
     }
 }
