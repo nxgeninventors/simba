@@ -33,6 +33,7 @@ jobs:
       run: |
         cp .env.example .env
         echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-        composer install
-        php artisan key:generate
-        rsync  -r --exclude '.env' --exclude 'vendor/' --exclude '.git/' --delete-after -e "ssh -i private_key" . ${USER_NAME}@${HOSTNAME}:/var/www/nxgeninventors.com/simba/
+        
+        ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+            cd /var/www/nxgeninventors.com/simba/ && ls
+        '
