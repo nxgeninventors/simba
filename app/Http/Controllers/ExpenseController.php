@@ -17,7 +17,7 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        return view('expenses.index');
+        return view('expense.index');
     }
 
     /**
@@ -27,10 +27,8 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        $users = User::all();
         $expenseStatuses = ExpenseStatus::all();
-
-        return view('expenses.create', compact('users', 'expenseStatuses'));
+        return view('expense.create', compact('expenseStatuses'));
     }
 
     /**

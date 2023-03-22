@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreIncomeRequest;
 use App\Http\Requests\UpdateIncomeRequest;
 use App\Models\Income;
+use App\Models\Project;
+use Illuminate\Support\Facades\Auth;
 
 class IncomeController extends Controller
 {
@@ -15,7 +17,7 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        return view('incomes.index');
+        return view('income.index');
     }
 
     /**
@@ -25,7 +27,9 @@ class IncomeController extends Controller
      */
     public function create()
     {
-        //
+        $user_id = Auth::user()->id;
+        $projects = Project::select('id','project_name')->get();
+        return view('income.create', compact('projects', 'user_id'));
     }
 
     /**
@@ -36,7 +40,12 @@ class IncomeController extends Controller
      */
     public function store(StoreIncomeRequest $request)
     {
-        //
+        $income = new Income();
+        $income->project_id = $request['project_id'];
+        $income->user_id = $request['user_id'];
+        $income->amount = $request['amount'];
+        $income->save();
+        return redirect()->route('income.index')->with('success', 'Income record successfully created.');
     }
 
     /**

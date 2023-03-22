@@ -13,7 +13,7 @@ class StoreIncomeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreIncomeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'project_id' => 'required|exists:projects,id',
+            'user_id' => 'required|exists:users,id',
+            'amount' => 'required|numeric',
         ];
     }
 }
