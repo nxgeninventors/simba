@@ -136,3 +136,5 @@ User::create([
 ]);
 
 ```
+
+-- https://stackoverflow.com/questions/37735055/laravel-database-schema-nullable-foreign

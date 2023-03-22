@@ -24,12 +24,8 @@ class StoreExpenseRequest extends FormRequest
     public function rules()
     {
         return [
-            'expense_status_id' => 'required|exists:expense_statuses,id',
             'notes' => 'nullable',
             'user_id' => 'required|exists:users,id',
-            'approved_by' => 'required|exists:users,id',
-            'approver_notes' => 'nullable',
-            'approved_at' => 'nullable|date',
             'amount' => 'required|numeric',
         ];
     }

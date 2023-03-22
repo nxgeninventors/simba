@@ -1,3 +1,5 @@
+import { formatDateTime } from '../../helpers';
+
 export const ExpensesConfig = {
     url: "expense",
     table_name: "expense_table",
@@ -12,7 +14,13 @@ export const ExpensesConfig = {
         { data: "id", title: "ID" },
         { data: "expense_status.name", title: "Expense Status" },
         { data: "amount", title: "Amount" },
-        { data: "created_at", title: "Created at" },
+        { 
+            data: "created_at", 
+            title: "Created at", 
+            render(h) {
+                return formatDateTime(h);
+            }, 
+        },
         {
             data: null,
             title: "Actions",

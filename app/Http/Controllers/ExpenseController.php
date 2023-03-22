@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
 use App\Models\Expense;
-use App\Models\User;
 use App\Models\ExpenseStatus;
+use App\Models\Project;
+use Illuminate\Support\Facades\Auth;
 
 class ExpenseController extends Controller
 {
@@ -27,8 +28,10 @@ class ExpenseController extends Controller
      */
     public function create()
     {
+        $user_id = Auth::user()->id;
+        $projects = Project::select('id','project_name')->get();
         $expenseStatuses = ExpenseStatus::all();
-        return view('expense.create', compact('expenseStatuses'));
+        return view('expense.create', compact('expenseStatuses', 'projects', 'user_id'));
     }
 
     /**
@@ -39,7 +42,15 @@ class ExpenseController extends Controller
      */
     public function store(StoreExpenseRequest $request)
     {
-        //
+        $expense = new Expense();
+        $expense->project_id = $request['project_id'];
+        $expense->user_id = $request['user_id'];
+        $expense->amount = $request['amount'];
+        $expense->notes = $request['notes'];
+        $expense->expense_status_id = 10; // Submitted
+        // $expense->approved_by = null; // Submitted
+        $expense->save();
+        return redirect()->route('expense.index')->with('success', 'Expense record successfully created.');
     }
 
     /**

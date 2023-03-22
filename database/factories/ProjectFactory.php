@@ -27,7 +27,7 @@ class ProjectFactory extends Factory
     {
 
         return [
-            'project_name' => $this->faker->sentence,
+            'project_name' => $this->faker->company(), // sentences(2);
             'project_category_id' => $this->faker->numberBetween(1, 3),
             'project_status_id' => $this->faker->numberBetween(1, 5),
             'client_id' => $this->faker->numberBetween(1, 20),

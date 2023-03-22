@@ -21,6 +21,7 @@ class ExpenseFactory extends Factory
         return [
             'expense_status_id' => $this->faker->numberBetween(1, 3), // ExpenseStatus::all()->random()->id,
             'notes' => $this->faker->sentence,
+            'project_id' => $this->faker->numberBetween(1, 10), // User::all()->random()->id,
             'user_id' => $this->faker->numberBetween(1, 10), // User::all()->random()->id,
             'approved_by' => $this->faker->numberBetween(10, 20), // User::all()->random()->id,
             'approver_notes' => $this->faker->sentence,
