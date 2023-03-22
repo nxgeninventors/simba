@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 use App\Models\Income;
 use App\Models\Expense;
 
@@ -29,17 +30,23 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin123'),
         ]);
 
-        \App\Models\User::factory(100)->create();
+        if (App::environment('local')) {
+            \App\Models\User::factory(100)->create();
+        }
 
         $this->call([
             ExpenseStatusSeeder::class,
             ProjectStatusesTableSeeder::class,
             ProjectCategoriesSeeder::class,
-            ClientsTableSeeder::class,
-            ProjectSeeder::class,
         ]);
 
-        Income::factory()->count(50)->create();
-        Expense::factory()->count(50)->create();
+        if (App::environment('local')) {
+            $this->call([
+                ClientsTableSeeder::class,
+                ProjectSeeder::class,
+            ]);
+            Income::factory()->count(50)->create();
+            Expense::factory()->count(50)->create();
+        }
     }
 }
