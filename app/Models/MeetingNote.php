@@ -23,14 +23,12 @@ class MeetingNote extends Model
     {
         $query->when(
             $filters['meeting_title'] ?? false,
-            fn ($query, $inv_code) =>
-            $query->where('meeting_title', 'like', '%'.$inv_code.'%')
+            fn ($query, $inv_code) => $query->where('meeting_title', 'like', '%'.$inv_code.'%')
         );
 
         $query->when(
             $filters['meeting_notes'] ?? false,
-            fn ($query, $reason) =>
-            $query->where('meeting_notes', 'like', '%'.$reason.'%')
+            fn ($query, $reason) => $query->where('meeting_notes', 'like', '%'.$reason.'%')
         );
 
         //$query->where('active', 1);

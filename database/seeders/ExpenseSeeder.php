@@ -13,6 +13,5 @@ class ExpenseSeeder extends Seeder
      */
     public function run()
     {
-        //
     }
 }

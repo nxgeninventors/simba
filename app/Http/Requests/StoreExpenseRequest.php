@@ -13,7 +13,7 @@ class StoreExpenseRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreExpenseRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'notes' => 'nullable',
+            'user_id' => 'required|exists:users,id',
+            'amount' => 'required|numeric',
         ];
     }
 }

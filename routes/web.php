@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -16,9 +17,9 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 |
 */
 
-Route::get('/', [AuthenticatedSessionController::class, 'create']);
+//Route::get('/', [AuthenticatedSessionController::class, 'create']);
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -39,7 +40,9 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('meeting-notes', App\Http\Controllers\MeetingNoteController::class);
     Route::resource('clients', App\Http\Controllers\ClientsController::class);
+    Route::resource('projects', App\Http\Controllers\ProjectController::class);
+    Route::resource('income', App\Http\Controllers\IncomeController::class);
+    Route::resource('expense', App\Http\Controllers\ExpenseController::class);
 });
-
 
 require __DIR__.'/auth.php';

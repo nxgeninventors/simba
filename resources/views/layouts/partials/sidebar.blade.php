@@ -30,6 +30,12 @@
           </li>
 
           <li>
+            <a href="/meeting-notes" class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
+              <i class="fa-solid fa-clipboard-list w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"></i>  
+              <span class="ml-3" sidebar-toggle-item="">Meeting Notes</span>
+            </a>
+          </li>
+          <li>
             <a href="/projects" class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
               <i class="fa-solid fa-clipboard-list w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"></i>  
               <span class="ml-3" sidebar-toggle-item="">Projects</span>
@@ -44,10 +50,10 @@
             </button>
             <ul id="dropdown-layouts" class="py-2 space-y-2 hidden">
               <li>
-                <a href="https://flowbite-admin-dashboard.vercel.app/layouts/stacked/" class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Income</a>
+                <a href="/income" class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Income</a>
               </li>
               <li>
-                <a href="https://flowbite-admin-dashboard.vercel.app/layouts/sidebar/" class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Expense</a>
+                <a href="/expense" class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Expense</a>
               </li>
             </ul>
           </li>
