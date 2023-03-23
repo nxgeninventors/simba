@@ -5,15 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreClientsRequest;
 use App\Http\Requests\UpdateClientRequest;
 use App\Models\Clients;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\RedirectResponse;
+
 
 
 class ClientsController extends Controller
 {
     public function index(){
-        $clients=Clients::get();
+      $clients = Clients::select('id','name')->get();
         return view('client.index',[
             'client'=>$clients
         ]);
@@ -28,14 +27,14 @@ class ClientsController extends Controller
 
      public function create(){
 
-        $country = DB::table('countries')->get();
+      $countries = DB::table('countries')->select('id','name')->get();
         return view('client.create',[
-            'country'=>$country,
+            'country'=>$countries,
         ]);
      } 
 
      public function store(StoreClientsRequest $request){
-        $clients= new Clients();
+        $clients = new Clients();
 
         $clients->name = $request->name;
         $clients->website = $request->website;
@@ -55,15 +54,8 @@ class ClientsController extends Controller
      }
 
 
-    public function update(UpdateClientRequest $request, $id){
-
-    // public function update(Request $request, Clients $client){
-    // public function update(Request $request, $id){
-
-    
-        // print_r($id);exit;
-       
-       $update=Clients::find($id);
+    public function update(UpdateClientRequest $request, $id){    
+       $update = Clients::find($id);
         $update->name = $request->input('name');
         $update->email = $request->input('email');
         $update->website = $request->input('website');
@@ -79,12 +71,7 @@ class ClientsController extends Controller
      }
 
      public function edit($id){
-        // print_r($id);exit;
-        $clients=Clients::find($id);
+        $clients = Clients::find($id);
         return view('client.edit', compact('clients'));
-     }
-     public function destroy($id)
-     {
-        //
      }
 }
