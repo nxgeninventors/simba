@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+
 use App\Models\Clients;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -15,6 +16,7 @@ class ClientsFactory extends Factory
      * @return array<string, mixed>
      */
     protected $model = Clients::class;
+
     public function definition()
     {
         return [

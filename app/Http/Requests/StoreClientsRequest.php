@@ -35,7 +35,7 @@ class StoreClientsRequest extends FormRequest
             'street_address' => 'required',
             'city' => 'required',
             'state' => 'required',
-            'zip' => 'required'
+            'zip' => 'required',
         ];
     }
 }

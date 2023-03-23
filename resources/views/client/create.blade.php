@@ -30,8 +30,8 @@
                             <div class="flex flex-wrap -mx-3 mb-6">
                                 <label for="inputPassword4">Country id</label>
                                 <select id="country" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="country_id" >
-                                @foreach($country as $countries)
-                                <option  value="{{$countries->id}}">{{$countries->name}}-{{$countries->country_code}}</option>
+                                @foreach($countries as $country)
+                                <option  value="{{$country->id}}">{{$country->name}}-{{$country->country_code}}</option>
                                 @endforeach
                                 </select>
                             </div> 

@@ -32,7 +32,7 @@ class UpdateClientRequest extends FormRequest
             'mobile' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'city' => 'required',
             'state' => 'required',
-            'zip' => 'required'
+            'zip' => 'required',
         ];
     }
 }
