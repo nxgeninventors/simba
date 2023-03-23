@@ -26,3 +26,5 @@ Route::middleware(['auth:api', 'verified'])->group(function(){
 */
 
 Route::resource('meeting-notes', App\Http\Controllers\Api\MeetingNotesController::class);
+
+Route::resource('clients', App\Http\Controllers\Api\ClientsController::class);

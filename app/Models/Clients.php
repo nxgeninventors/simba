@@ -14,4 +14,5 @@ class Clients extends Model
     // protected $guarded=[];
 
     protected $fillable = ['name', 'website','industry', 'description','country_id', 'email','mobile', 'street_address','city', 'state','zip'];
+
 }
