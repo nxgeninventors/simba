@@ -1,7 +1,7 @@
 export const ClientsConfig = {
-    url: "clients",
-    table_name: "clients_table",
-    delete_api: "/clients",
+    url: "customers",
+    table_name: "customers_table",
+    delete_api: "/customers",
     columnDefs: window.defaultColumnDefs,
     orderBy: window.orderByObj,
     edit: {
