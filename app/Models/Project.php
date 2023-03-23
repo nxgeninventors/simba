@@ -9,7 +9,6 @@ class Project extends Model
 {
     use HasFactory;
 
-
     /**
      * Get the project category that owns the project.
      */

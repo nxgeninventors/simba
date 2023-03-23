@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +14,7 @@ class ExpenseStatusSeeder extends Seeder
      */
     public function run()
     {
-        $statuses =  [
+        $statuses = [
             ['name' => 'Pending Approval', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Approved', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Rejected', 'created_at' => now(), 'updated_at' => now()],

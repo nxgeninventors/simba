@@ -2,15 +2,14 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Project;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Project>
  */
 class ProjectFactory extends Factory
 {
-
     /**
      * The name of the factory's corresponding model.
      *
@@ -25,7 +24,6 @@ class ProjectFactory extends Factory
      */
     public function definition()
     {
-
         return [
             'project_name' => $this->faker->company(), // sentences(2);
             'project_category_id' => $this->faker->numberBetween(1, 3),

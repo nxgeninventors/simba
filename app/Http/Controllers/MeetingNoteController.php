@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMeetingNoteRequest;
 use App\Http\Requests\UpdateMeetingNoteRequest;
 use App\Models\MeetingNote;
-use Illuminate\Http\Request;
 
 class MeetingNoteController extends Controller
 {
@@ -32,7 +31,6 @@ class MeetingNoteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreMeetingNoteRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreMeetingNoteRequest $request)
@@ -41,13 +39,13 @@ class MeetingNoteController extends Controller
         $meetingNote->meeting_title = $request['meeting_title'];
         $meetingNote->meeting_notes = $request['meeting_notes'];
         $meetingNote->save();
+
         return redirect()->route('meeting-notes.index')->with('success', 'Meeting notes successfully created.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MeetingNote  $meetingNote
      * @return \Illuminate\Http\Response
      */
     public function show(MeetingNote $meetingNote)
@@ -58,7 +56,6 @@ class MeetingNoteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MeetingNote  $meetingNote
      * @return \Illuminate\Http\Response
      */
     public function edit(MeetingNote $meetingNote)
@@ -69,20 +66,18 @@ class MeetingNoteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateMeetingNoteRequest  $request
-     * @param  \App\Models\MeetingNote  $meetingNote
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateMeetingNoteRequest $request, MeetingNote $meetingNote)
     {
         $meetingNote->update($request->all());
+
         return redirect()->route('meeting-notes.index')->with('success', 'Meeting notes successfully updated.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MeetingNote  $meetingNote
      * @return \Illuminate\Http\Response
      */
     public function destroy(MeetingNote $meetingNote)

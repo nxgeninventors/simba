@@ -2,11 +2,10 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-
 use App\Models\Income;
 use App\Models\Project;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Income>
@@ -14,6 +13,7 @@ use App\Models\User;
 class IncomeFactory extends Factory
 {
     protected $model = Income::class;
+
     /**
      * Define the model's default state.
      *

@@ -24,7 +24,7 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_name' => 'required|unique:projects,project_name,' . $this->route('project')->id,
+            'project_name' => 'required|unique:projects,project_name,'.$this->route('project')->id,
             'project_category_id' => 'required|exists:project_categories,id',
             'project_status_id' => 'required|exists:project_statuses,id',
             'client_id' => 'required|exists:clients,id',
