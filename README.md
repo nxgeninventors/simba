@@ -5,6 +5,7 @@
 
 Run the following command from root folder of the project. 
 
+
 ```bash
 ./vendor/bin/pint
 ```
