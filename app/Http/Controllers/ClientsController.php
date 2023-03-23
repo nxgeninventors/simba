@@ -51,7 +51,7 @@ class ClientsController extends Controller
 
          $clients->save();
 
-         return redirect('/clients')->with('status', 'Client added successfully.');
+         return redirect('/customers')->with('status', 'Customer added successfully.');
      }
 
     public function update(UpdateClientRequest $request, $id)
@@ -67,7 +67,7 @@ class ClientsController extends Controller
         $update->zip = $request->input('zip');
         $update->update();
 
-        return redirect('clients')->with('status', 'update successfully.');
+        return redirect('customers')->with('status', 'Customer updated successfully.');
     }
 
      public function edit($id)
