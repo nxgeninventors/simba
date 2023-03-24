@@ -16,7 +16,7 @@ export const ClientsConfig = {
         { data: "mobile", title: "Contact" },
         { data: "email", title: "Email" },
         { data: "state", title: "State" },
-        { data: "city", title: "zip" },
+        { data: "city", title: "City" },
         { data: "zip", title: "Zip" },
         // { data: "phone", title: "Phone" },
         // { data: "terms", title: "Terms" },
