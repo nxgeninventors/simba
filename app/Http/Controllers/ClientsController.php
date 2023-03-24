@@ -65,6 +65,9 @@ class ClientsController extends Controller
         $update->state = $request->input('state');
         $update->city = $request->input('city');
         $update->zip = $request->input('zip');
+        $update->description =$request->input('description');
+        $update->country_id =$request->input('country_id');
+        $update->street_address =$request->input('street_address');
         $update->update();
 
         return redirect('customers')->with('status', 'Customer updated successfully.');
