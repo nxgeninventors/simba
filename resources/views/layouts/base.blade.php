@@ -32,6 +32,10 @@
         <meta name="theme-color" content="#ffffff">
         <!-- Fav Icons End-->
 
+        <script>
+            window.base_path = "{{ Illuminate\Support\Facades\URL::to('/') }}";
+        </script>
+
         @vite(['resources/css/app.scss', 'resources/js/app.js'])
     </head>
     <body class="bg-gray-50 dark:bg-gray-800">
