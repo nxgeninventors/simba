@@ -86,6 +86,8 @@ Object.defineProperties(DataTableHelper.prototype, {
                 })
                 .columns.adjust()
                 .responsive.recalc();
+
+            window.dtInstance = this.dtInstance
         },
     },
     showInfo: {
