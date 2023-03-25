@@ -4,17 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreClientsRequest;
 use App\Http\Requests\UpdateClientRequest;
-use App\Models\Clients;
+use App\Models\Client;
 use Illuminate\Support\Facades\DB;
 
 class ClientsController extends Controller
 {
     public function index()
     {
-        $clients = Clients::select('id', 'name')->get();
+        // $clients = Clients::select('id', 'name')->get();
 
         return view('client.index', [
-            'client' => $clients,
+            // 'client' => $clients,
         ]);
     }
 
@@ -33,9 +33,16 @@ class ClientsController extends Controller
          ]);
      }
 
+     public function show($id)
+     {
+         $customer = Client::with('projects', 'projects.category', 'projects.status')->find($id);
+
+         return view('client.show', compact('customer'));
+     }
+
      public function store(StoreClientsRequest $request)
      {
-         $clients = new Clients();
+         $clients = new Client();
 
          $clients->name = $request->name;
          $clients->website = $request->website;
@@ -56,7 +63,7 @@ class ClientsController extends Controller
 
     public function update(UpdateClientRequest $request, $id)
     {
-        $update = Clients::find($id);
+        $update = Client::find($id);
         $update->name = $request->input('name');
         $update->email = $request->input('email');
         $update->website = $request->input('website');
@@ -75,7 +82,7 @@ class ClientsController extends Controller
 
      public function edit($id)
      {
-         $customer = Clients::find($id);
+         $customer = Client::find($id);
          $countries = DB::table('countries')->select('id', 'name')->get();
 
          return view('client.edit', compact('customer', 'countries'));

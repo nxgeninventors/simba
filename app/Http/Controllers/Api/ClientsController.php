@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Clients;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class ClientsController extends Controller
@@ -19,14 +19,14 @@ class ClientsController extends Controller
         $column = $request->column ?? env('DEFAULT_SORT_COLUMN');
         $direction = $request->direction ?? env('DEFAULT_SORT_DIRECTION');
 
-        return Clients::orderBy($column, $direction)
+        return Client::orderBy($column, $direction)
                     // ->filter(request(['name', 'website', 'industry', 'email', 'mobile', 'city', 'state', 'zip']))
                     ->paginate($limit);
     }
 
     public function destroy($id)
     {
-        $clients = Clients::find($id);
+        $clients = Client::find($id);
         $clients->delete();
 
         return ['msg' => 'Deleted'];
