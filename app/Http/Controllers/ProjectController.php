@@ -8,8 +8,8 @@ use App\Models\Client;
 use App\Models\Project;
 use App\Models\ProjectCategory;
 use App\Models\ProjectStatus;
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -20,9 +20,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
-
-        return view('projects.index', compact('projects'));
+        return view('projects.index');
     }
 
     /**
@@ -32,12 +30,16 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $categories = ProjectCategory::all();
-        $statuses = ProjectStatus::all();
-        $clients = Client::all();
-        $users = User::all();
+        $categories = ProjectCategory::select('id', 'name')->get();
+        $statuses = ProjectStatus::select('id', 'name')->get();
+        $clients = Client::select('id', 'name')->get();
+        $user_id = Auth::user()->id;
+        $status_id = 1;
 
-        return view('projects.create', compact('categories', 'statuses', 'clients', 'users'));
+        return view(
+            'projects.create',
+            compact('categories', 'statuses', 'clients', 'user_id', 'status_id')
+        );
     }
 
     /**
@@ -49,9 +51,15 @@ class ProjectController extends Controller
     // public function store(Request $request)
     public function store(StoreProjectRequest $request)
     {
-        $project = Project::create($request->validated());
+        $project = new Project();
+        $project->project_name = $request['project_name'];
+        $project->project_category_id = $request['project_category_id'];
+        $project->project_status_id = $request['project_status_id'];
+        $project->client_id = $request['client_id'];
+        $project->user_id = $request['user_id'];
+        $project->save();
 
-        return redirect()->route('projects.show', $project->id);
+        return redirect()->route('projects.index');
     }
 
     /**
@@ -75,12 +83,14 @@ class ProjectController extends Controller
     // public function edit($id)
     public function edit(Project $project)
     {
-        $categories = ProjectCategory::all();
-        $statuses = ProjectStatus::all();
-        $clients = Client::all();
-        $users = User::all();
+        $categories = ProjectCategory::select('id', 'name')->get();
+        $statuses = ProjectStatus::select('id', 'name')->get();
+        $clients = Client::select('id', 'name')->get();
 
-        return view('projects.edit', compact('project', 'categories', 'statuses', 'clients', 'users'));
+        return view(
+            'projects.edit',
+            compact('project', 'categories', 'statuses', 'clients')
+        );
     }
 
     /**
