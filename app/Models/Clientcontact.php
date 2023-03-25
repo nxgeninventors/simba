@@ -12,5 +12,4 @@ class Clientcontact extends Model
     protected $table = 'client_contacts';
 
     protected $fillable = ['first_name', 'last_name', 'title', 'email', 'mobile', 'gender', 'client_id'];
-
 }
