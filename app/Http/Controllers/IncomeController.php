@@ -66,7 +66,9 @@ class IncomeController extends Controller
      */
     public function edit(Income $income)
     {
-        //
+        $projects = Project::select('id', 'project_name')->get();
+
+        return view('income.edit', compact('income', 'projects'));
     }
 
     /**
@@ -76,7 +78,12 @@ class IncomeController extends Controller
      */
     public function update(UpdateIncomeRequest $request, Income $income)
     {
-        //
+        $income->project_id = $request['project_id'];
+        $income->user_id = $request['user_id'];
+        $income->amount = $request['amount'];
+        $income->update();
+
+        return redirect('income')->with('status', 'Income updated successfully.');
     }
 
     /**

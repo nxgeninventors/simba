@@ -33,7 +33,7 @@
             <div class="overflow-x-auto-1">
                 <div class="inline-block min-w-full align-middle">
                     <div class="overflow-hidden shadow px-1 py-1">
-                        <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600" style="width: 100%; overflow: hidden" id="customers_table">
+                        <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600" style="width: 100%;" id="customers_table">
                         </table>
                     </div>
                 </div>

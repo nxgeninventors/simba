@@ -21,7 +21,7 @@
                         </a>
                     </div>
 
-                    <table style="width: 100%; overflow: hidden" id="meeting_notes_table">
+                    <table style="width: 100%;" id="meeting_notes_table">
                     </table>
                 </div>
             </div>

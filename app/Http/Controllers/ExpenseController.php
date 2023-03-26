@@ -71,7 +71,10 @@ class ExpenseController extends Controller
      */
     public function edit(Expense $expense)
     {
-        return view('expenses.edit', compact('expense'));
+        $projects = Project::select('id', 'project_name')->get();
+        $expenseStatuses = ExpenseStatus::all();
+
+        return view('expenses.edit', compact('expense', 'projects', 'expenseStatuses'));
     }
 
     /**
@@ -81,7 +84,12 @@ class ExpenseController extends Controller
      */
     public function update(UpdateExpenseRequest $request, Expense $expense)
     {
-        $expense->update($request->all());
+        $expense->project_id = $request['project_id'];
+        $expense->user_id = $request['user_id'];
+        $expense->amount = $request['amount'];
+        $expense->notes = $request['notes'];
+        $expense->expense_status_id = $request['expense_status_id'];
+        $expense->update();
 
         return redirect()->route('expenses.index')->with('success', 'Expense has been updated successfully.');
     }
