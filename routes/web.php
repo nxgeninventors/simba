@@ -40,6 +40,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('customers', App\Http\Controllers\ClientsController::class);
     Route::resource('projects', App\Http\Controllers\ProjectController::class);
     Route::resource('income', App\Http\Controllers\IncomeController::class);
+    Route::resource('expense_categories', App\Http\Controllers\ExpenseCategoryController::class);
     Route::resource('expense', App\Http\Controllers\ExpenseController::class);
 });
 

@@ -24,3 +24,4 @@ export { MeetingNotesConfig } from "./config/meeting_notes";
 export { ProjectsConfig } from "./projects";
 export { ExpensesConfig } from "./expense";
 export { IncomesConfig } from "./income";
+export { ExpenseCategoryConfig } from "./expense_category";

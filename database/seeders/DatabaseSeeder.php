@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             ExpenseStatusSeeder::class,
-            ExpensecategoriesSeeder::class,
+            ExpenseCategorySeeder::class,
             ProjectStatusesTableSeeder::class,
             ProjectCategoriesSeeder::class,
         ]);

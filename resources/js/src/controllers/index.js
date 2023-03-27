@@ -3,6 +3,7 @@ import ClientsCtrl from "./clients";
 import ProjectsCtrl from "./projects";
 import ExpenseCtrl from "./expense";
 import IncomeCtrl from "./income";
+import ExpenseCategoryCtrl from "./expense-category";
 
 const ControllerModules =  {
     MeetingNotesCtrl,
@@ -10,6 +11,7 @@ const ControllerModules =  {
     ProjectsCtrl,
     ExpenseCtrl,
     IncomeCtrl,
+    ExpenseCategoryCtrl,
 }
 
 export default ControllerModules;
