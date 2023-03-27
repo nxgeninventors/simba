@@ -19,7 +19,7 @@ class ExpensesController extends Controller
         $column = $request->column ?? env('DEFAULT_SORT_COLUMN');
         $direction = $request->direction ?? env('DEFAULT_SORT_DIRECTION');
 
-        return Expense::with('expenseStatus')->orderBy($column, $direction)
+        return Expense::with('expenseStatus', 'expenseCategory')->orderBy($column, $direction)
                     //->filter(request(['meeting_title', 'meeting_notes']))
                     ->paginate($limit);
     }

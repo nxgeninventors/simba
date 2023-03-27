@@ -14,6 +14,11 @@ class Expense extends Model
         return $this->belongsTo(ExpenseStatus::class);
     }
 
+    public function expenseCategory()
+    {
+        return $this->belongsTo(ExpenseCategory::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

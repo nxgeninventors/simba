@@ -12,6 +12,7 @@ export const ExpensesConfig = {
     },
     columns: [
         { data: "id", title: "ID" },
+        { data: "expense_category.name", title: "Expense Category" },
         { data: "expense_status.name", title: "Expense Status" },
         { data: "amount", title: "Amount" },
         { 

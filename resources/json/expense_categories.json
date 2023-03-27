@@ -1,0 +1,142 @@
+[
+    {
+       "name":"Advertising",
+       "description":"This covers the cost of items and services to directly promote or market your business. Examples include fees paid to advertising or marketing companies to produce promotional materials, billboards, brochures, posters, websites and social media images. You may even deduct spending on a PR campaign."
+    },
+    {
+       "name":"Continuing education",
+       "description":"This can include courses for continuing education or seminars to stay current on industry trends. Relevant materials, books and registration fees for you and your employees are tax-deductible. You can also deduct payments made to employees to reimburse them for relevant educational expenses."
+    },
+    {
+       "name":"Credit and collection fees",
+       "description":"Businesses that use accrual basis accounting, where revenue and expenses are recorded when they’re earned or incurred even if no money changes hands at that point, can deduct unpaid invoices as business bad debt. Any fees spent trying to collect on debt, such as hiring an outside company to collect what’s owed, also count. A better bet: Minimize bad debt and increase cash flow by optimizing your billing processes."
+    },
+    {
+       "name":"Bank fees",
+       "description":"Interest paid on business loans, ongoing credit lines and business credit cards are tax-deductible expenses. Bank fees, such as monthly maintenance or overdraft fees, also count."
+    },
+    {
+       "name":"Dues and subscriptions",
+       "description":"Subscriptions to industry magazines or journals related to your business can be deducted on your taxes. Membership fees include those paid to professional or trade associations that can help promote your business and even to your local Chamber of Commerce."
+    },
+    {
+       "name":"Employee benefit programs",
+       "description":"Payments made toward benefits such as disability insurance, life insurance, dependent care assistance, health plans for you and your employees and adoption assistance are tax-deductible. Note that this is one area, along with workers’ compensation insurance, where companies tend to spend more than they need to."
+    },
+    {
+       "name":"Insurance",
+       "description":"Besides that workers’ compensation insurance, you can deduct premiums for business-related insurance, including for liability, malpractice and real estate. Auto insurance premiums on a personal vehicle are a bit more complicated: If you deduct a flat mileage rate, you can’t itemize and must use the actual expense method, where you determine what it actually costs to operate the car for the portion of the overall use of the car that’s business use."
+    },
+    {
+       "name":"Maintenance and repairs",
+       "description":"Companies that use fleet vehicles as part of their operations can deduct the portion used for business. Deductible expenses include parking fees and gas. Otherwise, you can choose to utilize the standard mileage rate. Additionally, repair and maintenance of other types of equipment and machinery used in your business can also count."
+    },
+    {
+       "name":"Legal and professional expenses",
+       "description":"These can include fees paid to certified public accountants (CPAs), financial planners, lawyers or other types of professionals."
+    },
+    {
+       "name":"Office expenses and supplies",
+       "description":"Items such as cleaning products, paper, notebooks, stationery and even snacks and beverages for employees can be deducted as supplies. The expenses category includes costs related to operating your business, such as website hosting and software. "
+    },
+    {
+       "name":"Telephone",
+       "description":"Monthly telecommunications fees in a commercial space can be deducted, as can additional phone lines in a home office as well as cell phone contracts as a subcategory of office expenses. "
+    },
+    {
+       "name":"Utilities",
+       "description":"For a commercial space, utilities such as electricity, internet, sewage and trash pickup fees are fully deductible. For a home office, you can deduct utilities in proportion to how much of your home is used for business. "
+    },
+    {
+       "name":"Postage and shipping",
+       "description":"Stamps, freight and postage fees to mail business-related items, including products to customers and return shipping labels, count. Envelopes and packaging materials are included in office supplies. "
+    },
+    {
+       "name":"Printing",
+       "description":"Items such as ink cartridges, printers or payments for printing services can be included under this business expense category. Note that if you decide to do some direct-mail marketing, you can deduct the cost of producing the materials here, but postage must be listed separately even if the printer handled mailings. "
+    },
+    {
+       "name":"Rent",
+       "description":"Any rental payments made to occupy a warehouse for inventory or office space to conduct business are tax deductible. Your business structure—C corporation (C-corp) or S corporation (S-corp)—dictates whether you can pay a reasonable amount to rent property from shareholders."
+    },
+    {
+       "name":"Salaries and other compensation",
+       "description":"Employee salaries, gross wages, commissions, bonuses and other types of compensation count as tax-deductible expenses. Compensation can even extend to salaries paid to children and spouses, provided payments were made through payroll and those individuals performed services for your business. The amount paid does need to be considered reasonable. "
+    },
+    {
+       "name":"Travel",
+       "description":"Business-related travel expenses include flights, hotels and meals—but note that only 50% of the cost of meals for employees and customers is deductible. Costs for candidates who are traveling for an interview are deductible. Examples include parking fees and flights."
+    },
+    {
+       "name":"Business meals",
+       "description":"You can deduct 50% of qualifying food and drink purchases. It needs to be related to the business, such as work conferences and meals on business trips. As a small business, you can deduct 50% of food and drink purchases that qualify."
+    },
+    {
+       "name":"Business use of your car",
+       "description":"You may be able to write off costs of maintaining and operating your vehicle if it’s strictly for business use. However, if it’s mixed, you can claim mileage related to the business use."
+    },
+    {
+       "name":"Moving expenses",
+       "description":"For work-related moving expenses, you may be able to deduct 100% of the costs related to your move. You will need to pass the distance test, such as your new job location being at least 50 miles from your former location. "
+    },
+    {
+       "name":"Depreciation",
+       "description":"These are costs for big ticket items like machinery or a vehicle over its lifetime use, instead of it over one single tax year."
+    },
+    {
+       "name":"Charitable contributions",
+       "description":"You can deduct charitable contributions made to qualifying organizations—you may need to itemize these deductions."
+    },
+    {
+       "name":"Child and/or dependent care",
+       "description":" Qualifying costs associated with child or dependent care can be written off, though you’ll need to meet the IRS requirements."
+    },
+    {
+       "name":"Startup expenses",
+       "description":"Businesses who launched a new venture may be able to deduct up to $5,000 in startup expenses leading up your launch. Examples include marketing and employee training costs."
+    },
+    {
+       "name":"Mortgage interest",
+       "description":"If you’re purchasing a building or taking out a loan to build or improve your home for business purposes, you may be able to deduct the interest incurred."
+    },
+    {
+       "name":"Software",
+       "description":"Ones, such as bookkeeping software or recurring subscription with SaaS companies, used for business related purposes may be fully tax deductible."
+    },
+    {
+       "name":"Books and magazine subscriptions",
+       "description":"Magazine, books and journals that are specialized and directly to your business may be tax-deductible. For instance, newspapers may not be, but industry-specific magazines would."
+    },
+    {
+       "name":"Foreign earned income",
+       "description":"If you have a business based abroad you may be able to leave out any foreign income earned off your tax return, known as foreign earned income exclusion. You’ll need to meet certain requirements such as being under a certain income threshold."
+    },
+    {
+       "name":"Medical expenses",
+       "description":"Self-employed individuals, who pay for their own medical care expenses or insurance premiums, can deduct these expenses on their tax return. Examples include doctor’s fees and prescription drugs."
+    },
+    {
+       "name":"Licenses and permits",
+       "description":"Any required licenses and permits can be tax deductible. Examples include building permits and licenses to practice law in your state."
+    },
+    {
+       "name":"Manufacturing or raw materials",
+       "description":"These are directly related to the cost of goods sold or items and storage paid to sell your products."
+    },
+    {
+       "name":"Retirement contributions",
+       "description":"Contributing to a tax-advantaged account, such as an IRA or 401k, can reduce your taxable income—a great way for those who are self-employed to save on taxes."
+    },
+    {
+       "name":"Real estate taxes",
+       "description":"If you have a home office and itemize your taxes, you may be able to deduct some of the taxes you pay."
+    },
+    {
+       "name":"Client gifts",
+       "description":"Gifts for employees, clients or vendors may be fully tax deductible. For example, you give your employees gift baskets during the holiday season or send gift cards to vendors."
+    },
+    {
+       "name":"Employee loans",
+       "description":"If you pay an advance to an employee and expect them to pay you back (as in, they didn’t do any extra work to earn this “extra” income), you can deduct this amount. However, any interest paid may count as business income."
+    }
+ ]

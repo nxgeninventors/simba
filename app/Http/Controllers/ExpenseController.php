@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
 use App\Models\Expense;
+use App\Models\ExpenseCategory;
 use App\Models\ExpenseStatus;
 use App\Models\Project;
 use Illuminate\Support\Facades\Auth;
@@ -30,9 +31,10 @@ class ExpenseController extends Controller
     {
         $user_id = Auth::user()->id;
         $projects = Project::select('id', 'project_name')->get();
+        $expenseCategories = ExpenseCategory::select('id', 'name', 'description')->get();
         $expenseStatuses = ExpenseStatus::all();
 
-        return view('expense.create', compact('expenseStatuses', 'projects', 'user_id'));
+        return view('expense.create', compact('expenseStatuses', 'projects', 'expenseCategories', 'user_id'));
     }
 
     /**
@@ -47,6 +49,7 @@ class ExpenseController extends Controller
         $expense->user_id = $request['user_id'];
         $expense->amount = $request['amount'];
         $expense->notes = $request['notes'];
+        $expense->expense_category_id = $request['expense_category_id'];
         $expense->expense_status_id = 10; // Submitted
         // $expense->approved_by = null; // Submitted
         $expense->save();
@@ -72,9 +75,10 @@ class ExpenseController extends Controller
     public function edit(Expense $expense)
     {
         $projects = Project::select('id', 'project_name')->get();
+        $expenseCategories = ExpenseCategory::select('id', 'name', 'description')->get();
         $expenseStatuses = ExpenseStatus::all();
 
-        return view('expenses.edit', compact('expense', 'projects', 'expenseStatuses'));
+        return view('expense.edit', compact('expense', 'projects', 'expenseStatuses', 'expenseCategories'));
     }
 
     /**
@@ -89,6 +93,7 @@ class ExpenseController extends Controller
         $expense->amount = $request['amount'];
         $expense->notes = $request['notes'];
         $expense->expense_status_id = $request['expense_status_id'];
+        $expense->expense_category_id = $request['expense_category_id'];
         $expense->update();
 
         return redirect()->route('expenses.index')->with('success', 'Expense has been updated successfully.');
