@@ -44,6 +44,4 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('expense', App\Http\Controllers\ExpenseController::class);
 });
 
-Route::get('/Customers/save', ClientsController::class)->name('contactsave');
-
 require __DIR__.'/auth.php';
