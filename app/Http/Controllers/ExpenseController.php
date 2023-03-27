@@ -89,14 +89,15 @@ class ExpenseController extends Controller
     public function update(UpdateExpenseRequest $request, Expense $expense)
     {
         $expense->project_id = $request['project_id'];
-        $expense->user_id = $request['user_id'];
         $expense->amount = $request['amount'];
         $expense->notes = $request['notes'];
-        $expense->expense_status_id = $request['expense_status_id'];
+        if (! empty($request['expense_status_id'])) {
+            $expense->expense_status_id = $request['expense_status_id'];
+        }
         $expense->expense_category_id = $request['expense_category_id'];
         $expense->update();
 
-        return redirect()->route('expenses.index')->with('success', 'Expense has been updated successfully.');
+        return redirect()->route('expense.index')->with('success', 'Expense has been updated successfully.');
     }
 
     /**

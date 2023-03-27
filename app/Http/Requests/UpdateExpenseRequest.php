@@ -26,8 +26,8 @@ class UpdateExpenseRequest extends FormRequest
         return [
             'notes' => 'nullable',
             'expense_category_id' => 'required|exists:expense_categories,id',
-            'project_id' => 'exists:projects,id',
-            'user_id' => 'required|exists:users,id',
+            'project_id' => 'nullable|exists:projects,id',
+            'user_id' => 'exists:users,id',
             'amount' => 'required|numeric',
         ];
     }
