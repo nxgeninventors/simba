@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreClientsRequest;
+use App\Http\Requests\StoreCustomerContactRequest;
 use App\Http\Requests\UpdateClientRequest;
 use App\Models\Client;
+use App\Models\Clientcontact;
 use Illuminate\Support\Facades\DB;
 
 class ClientsController extends Controller
@@ -86,5 +88,19 @@ class ClientsController extends Controller
          $countries = DB::table('countries')->select('id', 'name')->get();
 
          return view('client.edit', compact('customer', 'countries'));
+     }
+
+     public function contactsave( StoreCustomerContactRequest $request)
+     {
+
+        $customer_contact  = new Clientcontact();
+
+        $customer_contact->first_name = $request->first_name;
+        $customer_contact->last_name = $request->last_name;
+        $customer_contact->title = $request->title;
+        $customer_contact->email = $request->email;
+        $customer_contact->client_id = $request->client_id;
+        $customer_contact->mobile = $request->mobile; 
+        $customer_contact->save();
      }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -42,5 +43,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('income', App\Http\Controllers\IncomeController::class);
     Route::resource('expense', App\Http\Controllers\ExpenseController::class);
 });
+
+Route::get('/Customers/save', ClientsController::class)->name('contactsave');
 
 require __DIR__.'/auth.php';
