@@ -7,7 +7,7 @@
         @endforeach
     @endif
     
-    <form id="form" method="post" action="{{ url('customers') }}" >    
+    <form id="form" >    
         @csrf
         <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
             <div class="sm:col-span-2">
