@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,5 +44,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('expense_categories', App\Http\Controllers\ExpenseCategoryController::class);
     Route::resource('expense', App\Http\Controllers\ExpenseController::class);
 });
+
+Route::post('customers/contactsave', [ClientsController::class, 'contactsave']);
+Route::put('customers/contact/edit', [ClientsController::class, 'contactedit']);
 
 require __DIR__.'/auth.php';
