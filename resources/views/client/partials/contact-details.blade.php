@@ -54,7 +54,7 @@
                 {{$clientcontact->title}}
                 </td>
                 <td class="px-6 py-4">
-                    <span  id="contact-edit" data-modal-target="edit-modal" data-modal-toggle="edit-modal" class="font-medium text-blue-600 dark:text-blue-500 hover:underline ">Edit</span>
+                    <span data-contact="{{$clientcontact}}" id="contact-edit" data-modal-target="edit-modal" data-modal-toggle="edit-modal" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" style="cursor:pointer;">Edit</span>
                 </td>
             </tr>
             @endforeach

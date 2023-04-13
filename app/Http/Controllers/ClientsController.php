@@ -55,6 +55,7 @@ class ClientsController extends Controller
          $clients->city = $request->city;
          $clients->state = $request->state;
          $clients->zip = $request->zip;
+         $clients->gst_no = $request->gst_no;
 
          $clients->save();
 
@@ -75,6 +76,7 @@ class ClientsController extends Controller
         $update->description = $request->input('description');
         $update->country_id = $request->input('country_id');
         $update->street_address = $request->input('street_address');
+        $update->gst_no = $request->input('gst_no');
         $update->update();
 
         return redirect('customers')->with('status', 'Customer updated successfully.');

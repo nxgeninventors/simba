@@ -44,30 +44,15 @@ $( document ).ready(function() {
 
     $(document).on("click", '#contact-edit', function(){
         event.preventDefault();
-        var row= $(this);
-        var Id=$(this).attr('id');
-        $("#id").val(Id);
-        var firstname= row.closest("tr").find("td:eq(1)").text();
-        var first_name = $.trim(firstname);
-        $("#first_name1").val(first_name);
-        var last_name= row.closest("tr").find("td:eq(2)").text();
-        var lastname = $.trim(last_name);
-        $("#last_name1").val(lastname);
-        var title= row.closest("tr").find("td:eq(6)").text();
-        var title1 = $.trim(title);
-        $("#title1").val(title1);
-        var email= row.closest("tr").find("td:eq(3)").text();
-        var email1 = $.trim(email);
-        $("#email1").val(email1);
-        var mobile= row.closest("tr").find("td:eq(4)").text();
-        var mobile1 = $.trim(mobile);
-        $("#mobile1").val(mobile1);
-        var gender= row.closest("tr").find("td:eq(5)").text();
-        $('#gender1').val(`${gender}`);
-        // $("#gender1 option[value = '"+gender+"']").prop('selected');
-        var id= row.closest("tr").find("td:eq(0)").text();
-        var id1 = $.trim(id);
-        $("#id").val(id1);
+        var data =$(this).data('contact');
+       
+        $("#first_name1").val(data.first_name);
+        $("#last_name1").val(data.last_name);
+        $("#title1").val(data.title);
+        $("#email1").val(data.email);
+        $("#mobile1").val(data.mobile);
+        $('#gender1').val(data.gender);
+        $("#id").val(data.id);
 
         
 

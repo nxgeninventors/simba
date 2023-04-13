@@ -24,8 +24,9 @@ class ClientsController extends Controller
                     ->paginate($limit);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
+        $id = $request->id;
         $clients = Client::find($id);
         $clients->delete();
 

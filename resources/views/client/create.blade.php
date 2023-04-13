@@ -42,7 +42,7 @@
                                 <form id="form" method="post" action="{{ url('customers') }}" >    
                                     @csrf
                                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-                                        <div class="sm:col-span-2">
+                                        <div>
                                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Customer Name</label>
                                             <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type customer name" required="" value="{{old('name')}}">
                                         </div>
@@ -61,6 +61,10 @@
                                         <div>
                                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                                             <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Email" required="" value="{{old('email')}}">
+                                        </div> 
+                                        <div>
+                                            <label for="gst_no" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">GST Number</label>
+                                            <input type="text" name="gst_no" id="gst_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="GST number" required="" value="{{old('gst_no')}}">
                                         </div> 
 
                                         <div class="sm:col-span-2">
