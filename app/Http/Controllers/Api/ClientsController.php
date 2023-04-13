@@ -26,9 +26,8 @@ class ClientsController extends Controller
 
     public function destroy(Request $request)
     {
-        $id = $request->id;
-        $clients = Client::find($id);
-        $clients->delete();
+        $client = Client::find($request->id);
+        $client->delete();
 
         return ['msg' => 'Deleted'];
     }

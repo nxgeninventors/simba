@@ -56,7 +56,7 @@ Route::get('company', function () {
 
 Route::post('invoice_bill', [CompanyController::class, 'company_details']);
 
-Route::get('invoice', [CompanyController::class, 'invoice_login']);
+Route::get('invoice', [CompanyController::class, 'invoice_index']);
 
 Route::post('company', [CompanyController::class, 'detailssave']);
 

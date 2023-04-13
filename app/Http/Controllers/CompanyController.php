@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CompanyRequest;
 use App\Http\Requests\StoreCompanyDetailsRequest;
 use App\Models\Client;
-use App\Models\CompanyDetails;
+use App\Models\Companies;
+
 
 
 class CompanyController extends Controller
 {
     public function detailssave(StoreCompanyDetailsRequest $request)
     {
-        $details = new CompanyDetails();
+        $details = new Companies();
 
         $details->company_name = $request->company_name;
         $details->address = $request->address;
@@ -26,9 +27,9 @@ class CompanyController extends Controller
         return redirect('invoice')->with('success');
     }
 
-    public function invoice_login()
+    public function invoice_index()
     {
-        $companies = CompanyDetails::all();
+        $companies = Companies::all();
         $clients = Client::all();
 
         return view('company.index',[
@@ -39,13 +40,11 @@ class CompanyController extends Controller
 
     public function company_details(CompanyRequest $request)
     {
-        $id1 = $request->company_id;
-       $companies = CompanyDetails::find($id1);
-       $id2 = $request -> client_id;
-       $client = Client::find($id2);
+       $company = Companies::find($request->company_id);
+       $client = Client::find($request -> client_id);
 
         return view('company.invoice',[
-            'company' => $companies,
+            'company' => $company,
             'client' => $client
         ]);
 
