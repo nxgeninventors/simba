@@ -36,6 +36,7 @@ class StoreClientsRequest extends FormRequest
             'city' => 'required',
             'state' => 'required',
             'zip' => 'required',
+            'gst_no' => 'required'
         ];
     }
 }

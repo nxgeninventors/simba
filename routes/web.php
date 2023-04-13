@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,5 +48,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::post('customers/contactsave', [ClientsController::class, 'contactsave']);
 Route::put('customers/contact/edit', [ClientsController::class, 'contactedit']);
+
+Route::get('company', function () {
+    return view('company.company');
+});
+
+
+Route::post('invoice_bill', [CompanyController::class, 'company_details']);
+
+Route::get('invoice', [CompanyController::class, 'invoice_index']);
+
+Route::post('company', [CompanyController::class, 'detailssave']);
 
 require __DIR__.'/auth.php';

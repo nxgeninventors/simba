@@ -24,10 +24,10 @@ class ClientsController extends Controller
                     ->paginate($limit);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $clients = Client::find($id);
-        $clients->delete();
+        $client = Client::find($request->id);
+        $client->delete();
 
         return ['msg' => 'Deleted'];
     }

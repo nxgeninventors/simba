@@ -36,7 +36,7 @@
                                     @csrf
                                     @method('patch')
                                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-                                        <div class="sm:col-span-2">
+                                        <div>
                                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Customer Name</label>
                                             <input value="{{$customer->name}}" type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type customer name" required="">
                                         </div>
@@ -55,6 +55,10 @@
                                         <div class="w-full">
                                             <label for="industry" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Industry</label>
                                             <input value="{{$customer->industry}}" type="text" name="industry" id="industry" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Industry name" required="">
+                                        </div>
+                                        <div class="w-full">
+                                            <label for="gst_no" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">GST Number</label>
+                                            <input value="{{$customer->gst_no}}" type="text" name="gst_no" id="gst_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="GST number" required="">
                                         </div>
                                         <div class="sm:col-span-2">
                                             <label for="street_address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Street Address</label>
