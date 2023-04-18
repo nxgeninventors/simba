@@ -6,9 +6,11 @@ use App\Http\Requests\StoreExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
 use App\Models\Expense;
 use App\Models\ExpenseCategory;
+use App\Models\ExpenseDocs;
 use App\Models\ExpenseStatus;
 use App\Models\Project;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ExpenseController extends Controller
 {
@@ -53,6 +55,30 @@ class ExpenseController extends Controller
         $expense->expense_status_id = 10; // Submitted
         // $expense->approved_by = null; // Submitted
         $expense->save();
+
+        // Create the "expense" folder if it doesn't exist
+        if (! Storage::exists('expense')) {
+            Storage::makeDirectory('expense');
+        }
+
+        // Create a subfolder inside the "expense" folder with the ID as the name
+        $folderPath = 'expense/'.$expense->id;
+        if (! Storage::exists($folderPath)) {
+            Storage::makeDirectory($folderPath);
+        }
+        // Get the uploaded file
+        $expense_docs = $request['expense_docs'];
+        foreach ($expense_docs as $expense_doc) {
+            $file = $expense_doc['doc_name'];
+            $filePath = $file->store($folderPath);
+            $doc_label = $expense_doc['doc_label'];
+
+            $expenseDocs = new ExpenseDocs();
+            $expenseDocs->expense_id = $expense->id;
+            $expenseDocs->doc_name = $filePath;
+            $expenseDocs->doc_label = $doc_label;
+            $expenseDocs->save();
+        }
 
         return redirect()->route('expense.index')->with('success', 'Expense record successfully created.');
     }

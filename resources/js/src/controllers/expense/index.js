@@ -1,4 +1,5 @@
 import ExpenseDatatable from './datatable';
+import ExpsenDocs from './expense-docs';
 const ExpenseCtrl = function () {
 
     function updateDescription(description) {
@@ -17,6 +18,7 @@ const ExpenseCtrl = function () {
 
     const init = () => {
         ExpenseDatatable().initalize();
+        ExpsenDocs().initalize();
         registerEvents();
     }
 

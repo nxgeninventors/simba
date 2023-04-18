@@ -28,4 +28,9 @@ class Expense extends Model
     {
         return $this->belongsTo(User::class, 'approved_by');
     }
+
+    public function expenseDocs()
+    {
+        return $this->hasMany(ExpenseDoc::class, 'expense_id');
+    }
 }
