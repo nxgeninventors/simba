@@ -31,6 +31,6 @@ class Expense extends Model
 
     public function expenseDocs()
     {
-        return $this->hasMany(ExpenseDoc::class, 'expense_id');
+        return $this->hasMany(ExpenseDocs::class, 'expense_id');
     }
 }
