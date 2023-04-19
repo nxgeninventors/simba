@@ -54,7 +54,8 @@ jobs:
 
         ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
             cd /var/www/nxgeninventors.com/simba/ && 
-            sudo chmod -R 777 storage
+            sudo chmod -R 777 storage && 
+            php artisan storage:link 
         '
         
         
