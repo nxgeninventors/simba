@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
 class CompanyRequest extends FormRequest
 {
@@ -26,7 +25,7 @@ class CompanyRequest extends FormRequest
     {
         return [
             'company_id' => 'required',
-            'client_id' => 'required'
+            'client_id' => 'required',
         ];
     }
 }

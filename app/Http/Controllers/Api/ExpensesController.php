@@ -32,9 +32,9 @@ class ExpensesController extends Controller
                     $query->select('id', 'name', 'description');
                 },
             ])
-                    ->orderBy($column, $direction)
-                    //->filter(request(['meeting_title', 'meeting_notes']))
-                    ->paginate($limit);
+            ->orderBy($column, $direction)
+            //->filter(request(['meeting_title', 'meeting_notes']))
+            ->paginate($limit);
     }
 
     /**
