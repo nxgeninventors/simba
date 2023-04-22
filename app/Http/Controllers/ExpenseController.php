@@ -55,7 +55,7 @@ class ExpenseController extends Controller
         $expense_docs = $request['expense_docs'];
         if (! empty($expense_docs)) {
             foreach ($expense_docs as $expense_doc) {
-                if (empty($expense_doc)) {
+                if (empty($expense_doc) || empty($expense_doc['doc_name'])) {
                     continue;
                 }
                 $file = $expense_doc['doc_name'];
