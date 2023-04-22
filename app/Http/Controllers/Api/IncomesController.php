@@ -64,6 +64,10 @@ class IncomesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // ExpenseDocs::where('expense_id', $id)->delete();
+        $expense = Income::find($id);
+        $expense->delete();
+
+        return ['msg' => 'Deleted'];
     }
 }

@@ -1,4 +1,4 @@
-import { formatDateTime } from '../../helpers';
+import { formatDate } from '../../helpers';
 
 export const IncomesConfig = {
     url: "income",
@@ -15,10 +15,15 @@ export const IncomesConfig = {
         { data: "project.project_name", title: "Project Name" },
         { data: "amount", title: "Amount" },
         { 
-            data: "created_at", 
-            title: "Created at", 
+            data: "amount_received_date", 
+            title: "Date", 
             render(h) {
-                return formatDateTime(h);
+                if (h == null) {
+                    return '-';
+                }
+                if (h != '' || h != null) {
+                    return formatDate(h);
+                }
             }, 
         },
         {

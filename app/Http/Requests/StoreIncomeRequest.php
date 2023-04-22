@@ -27,6 +27,7 @@ class StoreIncomeRequest extends FormRequest
             'project_id' => 'required|exists:projects,id',
             'user_id' => 'required|exists:users,id',
             'amount' => 'required|numeric',
+            'amount_received_date' => 'required',
         ];
     }
 }
