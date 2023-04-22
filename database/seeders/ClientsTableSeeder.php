@@ -34,7 +34,7 @@ class ClientsTableSeeder extends Seeder
                     'city' => $faker->city,
                     'state' => $faker->state,
                     'zip' => $faker->postcode,
-                    'gst_no' =>$faker->regexify('[A-Z0-9]{15}')
+                    'gst_no' => $faker->regexify('[A-Z0-9]{15}'),
                 ]);
             }
         }

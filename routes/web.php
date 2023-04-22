@@ -54,7 +54,6 @@ Route::get('company', function () {
     return view('company.company');
 });
 
-
 Route::post('invoice_bill', [CompanyController::class, 'company_details']);
 
 Route::get('invoice', [CompanyController::class, 'invoice_index']);

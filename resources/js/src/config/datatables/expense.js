@@ -1,4 +1,4 @@
-import { formatDateTime } from '../../helpers';
+import { formatDate } from '../../helpers';
 
 export const ExpensesConfig = {
     url: "expense",
@@ -12,16 +12,23 @@ export const ExpensesConfig = {
     },
     columns: [
         { data: "id", title: "ID" },
-        { data: "expense_category.name", title: "Expense Category" },
-        { data: "expense_status.name", title: "Expense Status" },
-        { data: "amount", title: "Amount" },
         { 
-            data: "created_at", 
-            title: "Created at", 
+            data: "date_of_expense", 
+            title: "Date", 
             render(h) {
-                return formatDateTime(h);
+                if (h == null) {
+                    return '-';
+                }
+                if (h != '' || h != null) {
+                    return formatDate(h);
+                }
+                
             }, 
         },
+        { data: "project.project_name", title: "Project Name"},
+        { data: "expense_category.name", title: "Expense Category" },
+        { data: "expense_status.name", title: "Expense Status" },
+        { data: "amount", title: "Amount", className: "text-right" },
         {
             data: null,
             title: "Actions",
