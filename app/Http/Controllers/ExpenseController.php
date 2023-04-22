@@ -84,6 +84,7 @@ class ExpenseController extends Controller
         $expense->user_id = $request['user_id'];
         $expense->amount = $request['amount'];
         $expense->notes = $request['notes'];
+        $expense->date_of_expense = $request['date_of_expense'];
         $expense->expense_category_id = $request['expense_category_id'];
         $expense->expense_status_id = 10; // Submitted
         // $expense->approved_by = null; // Submitted
@@ -130,6 +131,7 @@ class ExpenseController extends Controller
         $expense->project_id = $request['project_id'];
         $expense->amount = $request['amount'];
         $expense->notes = $request['notes'];
+        $expense->date_of_expense = $request['date_of_expense'];
         if (! empty($request['expense_status_id'])) {
             $expense->expense_status_id = $request['expense_status_id'];
         }
