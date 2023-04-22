@@ -18,4 +18,11 @@ class Client extends Model
     {
         return $this->hasMany(Clientcontact::class);
     }
+
+    public static function getClients()
+    {
+        return self::select('id', 'name')
+                    ->orderBy('name', 'asc')
+                    ->get();
+    }
 }

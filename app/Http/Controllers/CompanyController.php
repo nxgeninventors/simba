@@ -5,17 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CompanyRequest;
 use App\Http\Requests\StoreCompanyDetailsRequest;
 use App\Models\Client;
-use App\Models\Companies;
+use App\Models\Company;
 use App\Models\InvoiceDetails;
 use App\Models\Invoices;
 use Illuminate\Http\Request;
-
 
 class CompanyController extends Controller
 {
     public function detailssave(StoreCompanyDetailsRequest $request)
     {
-        $details = new Companies();
+        $details = new Company();
 
         $details->company_name = $request->company_name;
         $details->address = $request->address;
@@ -31,8 +30,8 @@ class CompanyController extends Controller
 
     public function invoice_index()
     {
-        $companies = Companies::all();
-        $clients = Client::all();
+        $companies = Company::getCompanies();
+        $clients = Client::getClients();
 
         return view('company.index', [
             'companies' => $companies,
@@ -42,7 +41,7 @@ class CompanyController extends Controller
 
     public function company_details(CompanyRequest $request)
     {
-        $company = Companies::find($request->company_id);
+        $company = Company::find($request->company_id);
         $client = Client::find($request->client_id);
 
         return view('company.invoice', [
@@ -50,6 +49,7 @@ class CompanyController extends Controller
             'client' => $client,
         ]);
     }
+
     public function invoice_save(Request $request)
     {
         $invoice = new Invoices();
@@ -73,12 +73,10 @@ class CompanyController extends Controller
         $invoice->totalamount_after = $request->totalamount_after;
 
         $invoice->save();
-
     }
 
     public function invoice_description(Request $request)
     {
-
         foreach ($request->data as $row) {
             $model = new InvoiceDetails();
             $model->s_no = $row['s_no'];

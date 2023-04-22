@@ -7,7 +7,6 @@ use App\Http\Requests\UpdateExpenseRequest;
 use App\Models\Expense;
 use App\Models\ExpenseCategory;
 use App\Models\ExpenseDocs;
-use App\Models\ExpenseStatus;
 use App\Models\Project;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -32,11 +31,10 @@ class ExpenseController extends Controller
     public function create()
     {
         $user_id = Auth::user()->id;
-        $projects = Project::select('id', 'project_name')->get();
-        $expenseCategories = ExpenseCategory::select('id', 'name', 'description')->get();
-        $expenseStatuses = ExpenseStatus::all();
+        $projects = Project::getProjects();
+        $expenseCategories = ExpenseCategory::getExpenseCategories();
 
-        return view('expense.create', compact('expenseStatuses', 'projects', 'expenseCategories', 'user_id'));
+        return view('expense.create', compact('projects', 'expenseCategories', 'user_id'));
     }
 
     public function upload_expense_docs(Expense $expense, StoreExpenseRequest|UpdateExpenseRequest $request)
@@ -114,11 +112,11 @@ class ExpenseController extends Controller
     {
         // expenseDocs
         $expense = Expense::with('expenseDocs')->find($id);
-        $projects = Project::select('id', 'project_name')->get();
-        $expenseCategories = ExpenseCategory::select('id', 'name', 'description')->get();
-        $expenseStatuses = ExpenseStatus::all();
 
-        return view('expense.edit', compact('expense', 'projects', 'expenseStatuses', 'expenseCategories'));
+        $projects = Project::getProjects();
+        $expenseCategories = ExpenseCategory::getExpenseCategories();
+
+        return view('expense.edit', compact('expense', 'projects', 'expenseCategories'));
     }
 
     /**

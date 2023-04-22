@@ -8,7 +8,7 @@ use App\Http\Requests\UpdateClientRequest;
 use App\Http\Requests\UpdateCustomerContactRequest;
 use App\Models\Client;
 use App\Models\Clientcontact;
-use Illuminate\Support\Facades\DB;
+use App\Models\Country;
 
 class ClientsController extends Controller
 {
@@ -25,7 +25,7 @@ class ClientsController extends Controller
       */
      public function create()
      {
-         $countries = DB::table('countries')->select('id', 'name')->get();
+         $countries = Country::getCountries();
 
          return view('client.create', [
              'countries' => $countries,
@@ -34,7 +34,7 @@ class ClientsController extends Controller
 
      public function show($id)
      {
-        $customer = Client::with('projects', 'clientcontacts', 'projects.category', 'projects.status')->find($id);
+         $customer = Client::with('projects', 'clientcontacts', 'projects.category', 'projects.status')->find($id);
 
          return view('client.show', compact('customer'));
      }
@@ -88,7 +88,7 @@ class ClientsController extends Controller
      public function edit($id)
      {
          $customer = Client::find($id);
-         $countries = DB::table('countries')->select('id', 'name')->get();
+         $countries = Country::getCountries();
 
          return view('client.edit', compact('customer', 'countries'));
      }
