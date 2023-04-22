@@ -9,6 +9,11 @@ class Expense extends Model
 {
     use HasFactory;
 
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
     public function expenseStatus()
     {
         return $this->belongsTo(ExpenseStatus::class);
