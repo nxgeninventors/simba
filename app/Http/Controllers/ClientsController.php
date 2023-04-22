@@ -120,8 +120,8 @@ class ClientsController extends Controller
          $customer_contact->email = $request->email;
          $customer_contact->client_id = $request->client_id;
          $customer_contact->mobile = $request->mobile;
-         $customer_contact->is_customer = $request->input('is_customer1', false);
-         $customer_contact->is_supplier = $request->input('is_supplier1', false);
+         $customer_contact->is_customer = $request->input('is_customer', false);
+         $customer_contact->is_supplier = $request->input('is_supplier', false);
          $customer_contact->update();
 
          return $request;

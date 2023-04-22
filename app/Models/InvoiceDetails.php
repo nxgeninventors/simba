@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class InvoiceDescription extends Model
+class InvoiceDetails extends Model
 {
     use HasFactory;
-    protected $table = 'invoice_description';
+    protected $table = 'invoice_details';
 
     protected $fillable = [
         's_no',

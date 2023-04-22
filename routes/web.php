@@ -60,6 +60,7 @@ Route::post('invoice_bill', [CompanyController::class, 'company_details']);
 Route::get('invoice', [CompanyController::class, 'invoice_index']);
 Route::post('invoice_save', [CompanyController::class, 'invoice_save']);
 Route::post('invoice_description', [CompanyController::class, 'invoice_description']);
+Route::post('details_del', [CompanyController::class, 'details_del']);
 
 Route::post('company', [CompanyController::class, 'detailssave']);
 

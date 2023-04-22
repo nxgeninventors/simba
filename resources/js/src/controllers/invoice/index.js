@@ -292,7 +292,7 @@ $(document).ready(function(){
                 },
                 dataType: "json",
                 success: function (data1) {
-                
+                   $('#service_des').val()
     
                 },
                 error: function (data) {

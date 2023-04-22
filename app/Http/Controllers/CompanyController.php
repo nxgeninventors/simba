@@ -6,7 +6,7 @@ use App\Http\Requests\CompanyRequest;
 use App\Http\Requests\StoreCompanyDetailsRequest;
 use App\Models\Client;
 use App\Models\Companies;
-use App\Models\InvoiceDescription;
+use App\Models\InvoiceDetails;
 use App\Models\Invoices;
 use Illuminate\Http\Request;
 
@@ -80,7 +80,7 @@ class CompanyController extends Controller
     {
 
         foreach ($request->data as $row) {
-            $model = new InvoiceDescription();
+            $model = new InvoiceDetails();
             $model->s_no = $row['s_no'];
             $model->service_description = $row['service_des'];
             $model->hsn_code = $row['hsn_code'];
@@ -93,5 +93,10 @@ class CompanyController extends Controller
             $model->invoice_no = $row['invoice_no'];
             $model->save();
         }
+    }
+
+    public function details_del(Request $request)
+    {
+        InvoiceDetails::where('invoice_no', $request->invoice_number)->delete();
     }
 }
