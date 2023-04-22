@@ -7,8 +7,6 @@ use App\Http\Requests\StoreCompanyDetailsRequest;
 use App\Models\Client;
 use App\Models\Companies;
 
-
-
 class CompanyController extends Controller
 {
     public function detailssave(StoreCompanyDetailsRequest $request)
@@ -32,21 +30,20 @@ class CompanyController extends Controller
         $companies = Companies::all();
         $clients = Client::all();
 
-        return view('company.index',[
+        return view('company.index', [
             'companies' => $companies,
-            'clients' => $clients
+            'clients' => $clients,
         ]);
     }
 
     public function company_details(CompanyRequest $request)
     {
-       $company = Companies::find($request->company_id);
-       $client = Client::find($request -> client_id);
+        $company = Companies::find($request->company_id);
+        $client = Client::find($request->client_id);
 
-        return view('company.invoice',[
+        return view('company.invoice', [
             'company' => $company,
-            'client' => $client
+            'client' => $client,
         ]);
-
     }
 }

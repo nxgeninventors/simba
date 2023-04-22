@@ -5,7 +5,7 @@
         <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
             <div class="flex items-center justify-between mb-4">
             <div class="flex-shrink-0">
-                <span class="text-xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">$45,385</span>
+                <span class="text-xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">₹45,385</span>
                 <h3 class="text-base font-light text-gray-500 dark:text-gray-400">Sales this week</h3>
             </div>
             <div class="flex items-center justify-end flex-1 text-base font-medium text-green-500 dark:text-green-400">
@@ -109,7 +109,7 @@
                         </div>
                         </div>
                         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $445,467
+                            ₹445,467
                         </div>
                     </div>
                     </li>
@@ -131,7 +131,7 @@
                         </div>
                         </div>
                         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $256,982
+                            ₹256,982
                         </div>
                     </div>
                     </li>
@@ -153,7 +153,7 @@
                         </div>
                         </div>
                         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $201,869
+                            ₹201,869
                         </div>
                     </div>
                     </li>
@@ -175,7 +175,7 @@
                         </div>
                         </div>
                         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $103,967
+                            ₹103,967
                         </div>
                     </div>
                     </li>
@@ -197,7 +197,7 @@
                         </div>
                         </div>
                         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $98,543
+                            ₹98,543
                         </div>
                     </div>
                     </li>               
@@ -219,7 +219,7 @@
                         </p>
                         </div>
                         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $3320
+                            ₹3320
                         </div>
                     </div>
                     </li>
@@ -237,7 +237,7 @@
                         </p>
                         </div>
                         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $2467
+                            ₹2467
                         </div>
                     </div>
                     </li>
@@ -255,7 +255,7 @@
                         </p>
                         </div>
                         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $2235
+                            ₹2235
                         </div>
                     </div>
                     </li>
@@ -273,7 +273,7 @@
                         </p>
                         </div>
                         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $1842
+                            ₹1842
                         </div>
                     </div>
                     </li>
@@ -291,7 +291,7 @@
                         </p>
                         </div>
                         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $1044
+                            ₹1044
                         </div>
                     </div>
                     </li>
@@ -1184,7 +1184,7 @@
                         Apr 23 ,2021
                         </td>
                         <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
-                        $2300
+                            ₹2300
                         </td>
                         <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                         0047568936
@@ -1206,7 +1206,7 @@
                         Apr 23 ,2021
                         </td>
                         <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
-                        -$670
+                        -₹670
                         </td>
                         <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                         0078568936
@@ -1227,7 +1227,7 @@
                         Apr 18 ,2021
                         </td>
                         <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
-                        $234
+                            ₹234
                         </td>
                         <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                         0088568934
@@ -1249,7 +1249,7 @@
                         Apr 15 ,2021
                         </td>
                         <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
-                        $5000
+                            ₹5000
                         </td>
                         <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                         0018568911
@@ -1270,7 +1270,7 @@
                         Apr 15 ,2021
                         </td>
                         <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
-                        $2300
+                            ₹2300
                         </td>
                         <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                         0045568939
@@ -1291,7 +1291,7 @@
                         Apr 11 ,2021
                         </td>
                         <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
-                        -$560
+                        -₹560
                         </td>
                         <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                         0031568935
@@ -1313,7 +1313,7 @@
                         Apr 6 ,2021
                         </td>
                         <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
-                        $1437
+                            ₹1437
                         </td>
                         <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                         0023568934
@@ -1334,7 +1334,7 @@
                         Apr 1 ,2021
                         </td>
                         <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
-                        $980
+                            ₹980
                         </td>
                         <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                         0057568935
@@ -1355,7 +1355,7 @@
                         Mar 23 ,2021
                         </td>
                         <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
-                        $11,436
+                            ₹11,436
                         </td>
                         <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                         00836143841
@@ -1376,7 +1376,7 @@
                         Mar 23 ,2021
                         </td>
                         <td class="p-4 text-sm font-semibold text-gray-900 whitespace-nowrap dark:text-white">
-                        $560
+                            ₹560
                         </td>
                         <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                         0031568935
