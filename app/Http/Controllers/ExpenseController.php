@@ -53,17 +53,19 @@ class ExpenseController extends Controller
         }
         // Get the uploaded file
         $expense_docs = $request['expense_docs'];
-        foreach ($expense_docs as $expense_doc) {
-            $file = $expense_doc['doc_name'];
-            $filePath = $file->store($folderPath);
-            $filePath = str_replace('public/', '', $filePath);
-            $doc_label = $expense_doc['doc_label'];
+        if (! empty($expense_docs)) {
+            foreach ($expense_docs as $expense_doc) {
+                $file = $expense_doc['doc_name'];
+                $filePath = $file->store($folderPath);
+                $filePath = str_replace('public/', '', $filePath);
+                $doc_label = $expense_doc['doc_label'];
 
-            $expenseDocs = new ExpenseDocs();
-            $expenseDocs->expense_id = $expense->id;
-            $expenseDocs->doc_name = $filePath;
-            $expenseDocs->doc_label = $doc_label;
-            $expenseDocs->save();
+                $expenseDocs = new ExpenseDocs();
+                $expenseDocs->expense_id = $expense->id;
+                $expenseDocs->doc_name = $filePath;
+                $expenseDocs->doc_label = $doc_label;
+                $expenseDocs->save();
+            }
         }
     }
 
