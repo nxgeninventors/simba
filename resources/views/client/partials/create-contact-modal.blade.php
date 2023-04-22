@@ -39,6 +39,12 @@
                             <option value="female">Female</option>
                         </select>
                     </div>
+                    <div>
+                        <label for="is_customer">Is Customer?</label>
+                        <input type="checkbox" id="is_customer" name="is_customer" value="1"><span>(or)</span>
+                        <label for="is_supplier">Is Supplier?</label>
+                        <input type="checkbox" id="is_supplier" name="is_supplier" value="1">
+                    </div>
                     <input type="hidden" name="client_id" id="client_id" value="{{$customer->id}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
 
                     <button type="submit" id="contact-submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">submit</button>

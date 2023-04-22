@@ -25,6 +25,7 @@ class IncomeFactory extends Factory
             'project_id' => Project::factory(),
             'user_id' => User::factory(),
             'amount' => $this->faker->randomFloat(2, 100, 10000),
+            'created_at' => $this->faker->dateTimeBetween('-1 year', 'now')
         ];
     }
 }

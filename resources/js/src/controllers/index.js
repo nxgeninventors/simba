@@ -5,6 +5,7 @@ import ExpenseCtrl from "./expense";
 import IncomeCtrl from "./income";
 import ExpenseCategoryCtrl from "./expense-category";
 import InvoiceCtrl from "./invoice";
+import AccountsCtrl from "./accounts_pay";
 
 const ControllerModules =  {
     MeetingNotesCtrl,
@@ -13,7 +14,8 @@ const ControllerModules =  {
     ExpenseCtrl,
     IncomeCtrl,
     ExpenseCategoryCtrl,
-    InvoiceCtrl
+    InvoiceCtrl,
+    AccountsCtrl
 }
 
 export default ControllerModules;

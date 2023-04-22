@@ -28,6 +28,7 @@ class ExpenseFactory extends Factory
             'approver_notes' => $this->faker->sentence,
             'approved_at' => now(),
             'amount' => $this->faker->randomFloat(2, 10, 500),
+            'created_at' => $this->faker->dateTimeBetween('-1 year', 'now')
         ];
     }
 }

@@ -23,7 +23,10 @@ return new class extends Migration
             $table->string('mobile', 25);
             $table->tinyText('gender', 1);
             $table->foreignId('client_id')->constrained('clients');
+            $table->boolean('is_customer')->default(false);
+            $table->boolean('is_supplier')->default(false);
             $table->timestamps();
+
         });
     }
 

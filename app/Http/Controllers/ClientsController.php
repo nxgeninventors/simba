@@ -34,8 +34,7 @@ class ClientsController extends Controller
 
      public function show($id)
      {
-         $customer_contact =
-          $customer = Client::with('projects', 'clientcontacts', 'projects.category', 'projects.status')->find($id);
+        $customer = Client::with('projects', 'clientcontacts', 'projects.category', 'projects.status')->find($id);
 
          return view('client.show', compact('customer'));
      }
@@ -56,6 +55,8 @@ class ClientsController extends Controller
          $clients->state = $request->state;
          $clients->zip = $request->zip;
          $clients->gst_no = $request->gst_no;
+         $clients->is_customer = $request->input('is_customer', false);
+         $clients->is_supplier = $request->input('is_supplier', false);
 
          $clients->save();
 
@@ -77,6 +78,8 @@ class ClientsController extends Controller
         $update->country_id = $request->input('country_id');
         $update->street_address = $request->input('street_address');
         $update->gst_no = $request->input('gst_no');
+        $update->is_customer = $request->input('is_customer', false);
+        $update->is_supplier = $request->input('is_supplier', false);
         $update->update();
 
         return redirect('customers')->with('status', 'Customer updated successfully.');
@@ -101,6 +104,8 @@ class ClientsController extends Controller
          $customer_contact->client_id = $request->client_id;
          $customer_contact->mobile = $request->mobile;
          $customer_contact->gender = $request->gender;
+         $customer_contact->is_customer = $request->input('is_customer', false);
+         $customer_contact->is_supplier = $request->input('is_supplier', false);
          $customer_contact->save();
      }
 
@@ -115,6 +120,8 @@ class ClientsController extends Controller
          $customer_contact->email = $request->email;
          $customer_contact->client_id = $request->client_id;
          $customer_contact->mobile = $request->mobile;
+         $customer_contact->is_customer = $request->input('is_customer1', false);
+         $customer_contact->is_supplier = $request->input('is_supplier1', false);
          $customer_contact->update();
 
          return $request;

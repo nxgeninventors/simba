@@ -34,6 +34,7 @@ $( document ).ready(function() {
             data: data,
             dataType: "json",
             success: function (data1) {
+                $("#close-modal").click();
  
             },
             error: function (data) {
@@ -45,7 +46,7 @@ $( document ).ready(function() {
     $(document).on("click", '#contact-edit', function(){
         event.preventDefault();
         var data =$(this).data('contact');
-       
+       console.log(data);
         $("#first_name1").val(data.first_name);
         $("#last_name1").val(data.last_name);
         $("#title1").val(data.title);
@@ -54,6 +55,12 @@ $( document ).ready(function() {
         $('#gender1').val(data.gender);
         $("#id").val(data.id);
 
+        if (data.is_customer == 1) {
+            $("#is_customer1").prop("checked", true);
+        }
+        if (data.is_supplier == 1) {
+            $("#is_supplier1").prop("checked", true);
+        }
         
 
     });
