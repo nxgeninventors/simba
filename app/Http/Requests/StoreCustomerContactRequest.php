@@ -32,6 +32,8 @@ class StoreCustomerContactRequest extends FormRequest
             'email' => 'required|email',
             'mobile' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'gender' => 'required',
+            'is_customer' => 'sometimes|boolean',
+            'is_supplier' => 'sometimes|boolean'
         ];
     }
 }

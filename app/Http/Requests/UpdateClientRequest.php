@@ -29,11 +29,14 @@ class UpdateClientRequest extends FormRequest
             'industry' => 'required',
             'description' => 'required',
             'email' => 'required|email',
+            'country_id' => 'required',
             'mobile' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'city' => 'required',
             'state' => 'required',
             'zip' => 'required',
             'gst_no' => 'required',
+            'is_customer' => 'sometimes|boolean',
+            'is_supplier' => 'sometimes|boolean'
         ];
     }
 }

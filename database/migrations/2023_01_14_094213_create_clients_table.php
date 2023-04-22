@@ -27,6 +27,8 @@ return new class extends Migration
             $table->string('city', 150);
             $table->string('state', 150);
             $table->string('zip', 15);
+            $table->boolean('is_customer')->default(false);
+            $table->boolean('is_supplier')->default(false);
             $table->timestamps();
         });
     }
