@@ -12,6 +12,12 @@
         <script src="https://use.fontawesome.com/releases/v6.2.1/js/all.js" data-auto-a11y="true" ></script>
         <!-- Fonts -->
 
+        <script>
+            window._token = "{{ csrf_token() }}";
+            window.RECORD_LIMIT = "{{ env('RECORD_LIMIT') }}";
+            window.base_path = "{{ URL::to('/') }}";
+            window.api_base_path = "{{ URL::to('/') }}"+'/api';
+        </script>
         
         <!-- Fav Icons -->
         <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('images/app-icons/apple-icon-57x57.png') }}">

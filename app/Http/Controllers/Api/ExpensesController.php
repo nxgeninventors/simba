@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Expense;
+use App\Models\ExpenseDocs;
 use Illuminate\Http\Request;
 
 class ExpensesController extends Controller
@@ -19,9 +20,21 @@ class ExpensesController extends Controller
         $column = $request->column ?? env('DEFAULT_SORT_COLUMN');
         $direction = $request->direction ?? env('DEFAULT_SORT_DIRECTION');
 
-        return Expense::with('expenseStatus', 'expenseCategory')->orderBy($column, $direction)
-                    //->filter(request(['meeting_title', 'meeting_notes']))
-                    ->paginate($limit);
+        return Expense::with(
+            [
+                'project' => function ($query) {
+                    $query->select('id', 'project_name');
+                },
+                'expenseStatus' => function ($query) {
+                    $query->select('id', 'name');
+                },
+                'expenseCategory' => function ($query) {
+                    $query->select('id', 'name', 'description');
+                },
+            ])
+            ->orderBy($column, $direction)
+            //->filter(request(['meeting_title', 'meeting_notes']))
+            ->paginate($limit);
     }
 
     /**
@@ -64,6 +77,10 @@ class ExpensesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ExpenseDocs::where('expense_id', $id)->delete();
+        $expense = Expense::find($id);
+        $expense->delete();
+
+        return ['msg' => 'Deleted'];
     }
 }

@@ -44,6 +44,7 @@ class IncomeController extends Controller
         $income->project_id = $request['project_id'];
         $income->user_id = $request['user_id'];
         $income->amount = $request['amount'];
+        $income->amount_received_date = $request['amount_received_date'];
         $income->save();
 
         return redirect()->route('income.index')->with('success', 'Income record successfully created.');
@@ -56,7 +57,6 @@ class IncomeController extends Controller
      */
     public function show(Income $income)
     {
-        //
     }
 
     /**
@@ -81,6 +81,7 @@ class IncomeController extends Controller
         $income->project_id = $request['project_id'];
         $income->user_id = $request['user_id'];
         $income->amount = $request['amount'];
+        $income->amount_received_date = $request['amount_received_date'];
         $income->update();
 
         return redirect('income')->with('status', 'Income updated successfully.');

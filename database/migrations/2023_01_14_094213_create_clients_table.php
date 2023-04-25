@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name', 255);
             $table->string('website', 255);
             $table->string('industry', 255);
-            $table->string('gst_no',25);
+            $table->string('gst_no', 25);
             $table->text('description');
             $table->foreignId('country_id')->constrained('countries');
             $table->string('email', 100)->unique();

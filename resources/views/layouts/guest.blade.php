@@ -9,7 +9,12 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        <script>
+            window._token = "{{ csrf_token() }}";
+            window.RECORD_LIMIT = "{{ env('RECORD_LIMIT') }}";
+            window.base_path = "{{ URL::to('/') }}";
+            window.api_base_path = "{{ URL::to('/') }}"+'/api';
+        </script>
         <!-- Scripts -->
         @vite(['resources/css/app.scss', 'resources/js/app.js'])
     </head>

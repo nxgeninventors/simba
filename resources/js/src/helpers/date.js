@@ -7,5 +7,14 @@ export const formatDateTime = (timestamp) => {
     } catch (error) {
         return timestamp;
     }
+}
+
+export const formatDate = (timestamp) => {
+    try {
+        const dateObj = moment(timestamp);
+        return `${dateObj.format('DD-MMM-YYYY')}`;
+    } catch (error) {
+        return timestamp;
+    }
     
 }
