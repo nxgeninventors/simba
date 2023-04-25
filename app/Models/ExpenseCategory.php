@@ -9,7 +9,11 @@ class ExpenseCategory extends Model
 {
     use HasFactory;
 
-    public static function getexpensecategory(){
-        return self::select('id', 'name', 'description')->get();
+
+    public static function getExpenseCategories()
+    {
+        return self::select('id', 'name', 'description')
+                    ->orderBy('name', 'asc')
+                    ->get();
     }
 }

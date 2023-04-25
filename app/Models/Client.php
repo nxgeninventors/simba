@@ -22,4 +22,11 @@ class Client extends Model
     public static function getsupplier(){
         return self::where('is_supplier', true)->select('id','name')->get();
     }
+    
+    public static function getClients()
+    {
+        return self::select('id', 'name')
+                    ->orderBy('name', 'asc')
+                    ->get();
+    }
 }

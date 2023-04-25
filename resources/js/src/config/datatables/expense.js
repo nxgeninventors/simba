@@ -1,4 +1,4 @@
-import { formatDate } from '../../helpers';
+import { formatDate, format_number } from '../../helpers';
 
 export const ExpensesConfig = {
     url: "expense",
@@ -28,7 +28,14 @@ export const ExpensesConfig = {
         { data: "project.project_name", title: "Project Name"},
         { data: "expense_category.name", title: "Expense Category" },
         { data: "expense_status.name", title: "Expense Status" },
-        { data: "amount", title: "Amount", className: "text-right" },
+        { 
+            data: "amount",
+            title: "Amount",
+            className: "text-right",
+            render(h) {
+                return format_number(h);
+            }, 
+        },
         {
             data: null,
             title: "Actions",

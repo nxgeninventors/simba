@@ -17,6 +17,8 @@
             window.RECORD_LIMIT = "{{ env('RECORD_LIMIT') }}";
             window.base_path = "{{ URL::to('/') }}";
             window.api_base_path = "{{ URL::to('/') }}"+'/api';
+            window.DEFAULT_CURRENCY = "{{ env('DEFAULT_CURRENCY', 'INR') }}";
+            window.DEFAULT_LOCALE = "{{ env('DEFAULT_LOCALE', 'en-IN') }}";
         </script>
         
         <!-- Fav Icons -->

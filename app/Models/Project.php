@@ -51,9 +51,11 @@ class Project extends Model
         return $this->hasMany(Expense::class);
     }
 
-   public static function getprojects(){
-    
-      return  self::select('id', 'project_name')->get();
-    
+
+    public static function getProjects()
+    {
+        return self::select('id', 'project_name')
+                    ->orderBy('project_name', 'asc')
+                    ->get();
     }
 }

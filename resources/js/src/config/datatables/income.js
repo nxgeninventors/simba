@@ -1,4 +1,4 @@
-import { formatDate } from '../../helpers';
+import { formatDate, format_number } from '../../helpers';
 
 export const IncomesConfig = {
     url: "income",
@@ -13,7 +13,15 @@ export const IncomesConfig = {
     columns: [
         { data: "id", title: "ID" },
         { data: "project.project_name", title: "Project Name" },
-        { data: "amount", title: "Amount" },
+        { 
+            data: "amount",
+            title: "Amount",
+            className: "text-right",
+            render(h) {
+                return format_number(h);
+            }, 
+        },
+        //{ data: "amount", title: "Amount" },
         { 
             data: "amount_received_date", 
             title: "Date", 
