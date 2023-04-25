@@ -32,11 +32,11 @@ class ExpenseController extends Controller
     public function create()
     {
         $user_id = Auth::user()->id;
-
         $projects = Project::getProjects();
         $expenseCategories = ExpenseCategory::getExpenseCategories();
-        $suppliers = Client::where('is_supplier', true)->select('id','name')->get();
+        $suppliers = Client::getsupplier();
         return view('expense.create', compact('projects', 'expenseCategories', 'user_id','suppliers'));
+
     }
 
     public function upload_expense_docs(Expense $expense, StoreExpenseRequest|UpdateExpenseRequest $request)
@@ -117,7 +117,7 @@ class ExpenseController extends Controller
         $expense = Expense::with('expenseDocs')->find($id);
         $projects = Project::getProjects();
         $expenseCategories = ExpenseCategory::getExpenseCategories();
-        $suppliers = Client::where('is_supplier', true)->select('id','name')->get();
+        $suppliers = Client::getsupplier();
         return view('expense.edit', compact('expense', 'projects', 'expenseCategories','suppliers'));
 
     }

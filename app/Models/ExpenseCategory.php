@@ -9,6 +9,7 @@ class ExpenseCategory extends Model
 {
     use HasFactory;
 
+
     public static function getExpenseCategories()
     {
         return self::select('id', 'name', 'description')
