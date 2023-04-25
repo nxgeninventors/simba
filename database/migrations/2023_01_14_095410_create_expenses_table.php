@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('approver_notes')->nullable();
             $table->timestamp('approved_at')->nullable();
             $table->decimal('amount', 20, 2);
+            $table->integer('supplier_id')->nullable();
             $table->timestamps();
         });
     }
