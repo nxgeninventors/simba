@@ -3,7 +3,7 @@ import moment from 'moment';
 export const formatDateTime = (timestamp) => {
     try {
         const dateObj = moment(timestamp);
-        return `${dateObj.format('DD-MMM-YYYY')} ${dateObj.format('hh:mm:ss')}`;
+        return `${dateObj.format('MMM DD, YYYY')} ${dateObj.format('hh:mm:ss')}`;
     } catch (error) {
         return timestamp;
     }
@@ -12,7 +12,7 @@ export const formatDateTime = (timestamp) => {
 export const formatDate = (timestamp) => {
     try {
         const dateObj = moment(timestamp);
-        return `${dateObj.format('DD-MMM-YYYY')}`;
+        return `${dateObj.format('MMM DD, YYYY')}`;
     } catch (error) {
         return timestamp;
     }

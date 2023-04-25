@@ -45,6 +45,7 @@ class DatabaseSeeder extends Seeder
             $this->call([
                 ClientsTableSeeder::class,
                 ProjectSeeder::class,
+                CompanySeeder::class,
             ]);
             Income::factory()->count(50)->create();
             Expense::factory()->count(50)->create();
