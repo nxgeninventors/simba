@@ -254,77 +254,77 @@ $(document).ready(function(){
         });
     });
 
-        $("#des_submit").click(function () {
-        
-            // Get all the rows
-            const rows = document.querySelectorAll('#input_field tr');
-
-            // Loop through the rows and get the input values
-            const rowData = [];
-            rows.forEach(row => {
-            const inputValues = {
-                s_no: row.querySelector('#s_no').value,
-                service_des: row.querySelector('#service_des').value,
-                hsn_code: row.querySelector('#hsn_code').value,
-                periodicity1: row.querySelector('#periodicity1').value,
-                periodicity2: row.querySelector('#periodicity2').value,
-                rate: row.querySelector('#rate').value,
-                amount: row.querySelector('#amount').value,
-                gst: row.querySelector('#gst').value,
-                taxable_value: row.querySelector('#taxable_value').value,
-                invoice_no: $("#invoice_number").val()
-
-            };
-            rowData.push(inputValues);
-            });
-            
-            // Store the input values for each row in an object or an array
-            console.log(rowData);
-
-            $.ajax({
-                type: "post",
-                url: "invoice_description",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: {
-                data: rowData
-                },
-                dataType: "json",
-                success: function (data1) {
-                   $('#service_des').val()
+    $("#des_submit").click(function () {
     
-                },
-                error: function (data) {
+        // Get all the rows
+        const rows = document.querySelectorAll('#input_field tr');
+
+        // Loop through the rows and get the input values
+        const rowData = [];
+        rows.forEach(row => {
+        const inputValues = {
+            s_no: row.querySelector('#s_no').value,
+            service_des: row.querySelector('#service_des').value,
+            hsn_code: row.querySelector('#hsn_code').value,
+            periodicity1: row.querySelector('#periodicity1').value,
+            periodicity2: row.querySelector('#periodicity2').value,
+            rate: row.querySelector('#rate').value,
+            amount: row.querySelector('#amount').value,
+            gst: row.querySelector('#gst').value,
+            taxable_value: row.querySelector('#taxable_value').value,
+            invoice_no: $("#invoice_number").val()
+
+        };
+        rowData.push(inputValues);
+        });
+        
+        // Store the input values for each row in an object or an array
+        console.log(rowData);
+
+        $.ajax({
+            type: "post",
+            url: "invoice_description",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+            data: rowData
+            },
+            // dataType: "json",
+            success: function (data1) {
                 
-                }
-            });
 
+            },
+            error: function (data) {
+            
+            }
         });
 
-        $("#del_btn").click(function (event) {
-            event.preventDefault();
-          
-            var invoice_number = $('#invoice_number').val();
-            $.ajax({
-                type: "post",
-                url: "details_del",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: {
-                    invoice_number: invoice_number,
-                },
-                dataType: "json",
-                success: function (data1) {
-                  
-     
-                },
-                error: function (data) {
-                   
-                }
-            });
+    });
+
+    $("#del_btn").click(function (event) {
+        event.preventDefault();
+        
+        var invoice_number = $('#invoice_number').val();
+        $.ajax({
+            type: "post",
+            url: "details_del",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+                invoice_number: invoice_number,
+            },
+            dataType: "json",
+            success: function (data1) {
+                
+    
+            },
+            error: function (data) {
+                
+            }
         });
+    });
 
     
 });

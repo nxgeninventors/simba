@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
+use App\Models\Client;
 use App\Models\Expense;
 use App\Models\ExpenseCategory;
 use App\Models\ExpenseDocs;
@@ -31,10 +32,11 @@ class ExpenseController extends Controller
     public function create()
     {
         $user_id = Auth::user()->id;
+
         $projects = Project::getProjects();
         $expenseCategories = ExpenseCategory::getExpenseCategories();
-
-        return view('expense.create', compact('projects', 'expenseCategories', 'user_id'));
+        $suppliers = Client::where('is_supplier', true)->select('id','name')->get();
+        return view('expense.create', compact('projects', 'expenseCategories', 'user_id','suppliers'));
     }
 
     public function upload_expense_docs(Expense $expense, StoreExpenseRequest|UpdateExpenseRequest $request)
@@ -80,6 +82,7 @@ class ExpenseController extends Controller
         $expense = new Expense();
         $expense->project_id = $request['project_id'];
         $expense->user_id = $request['user_id'];
+        $expense->supplier_id = $request['supplier_id'];
         $expense->amount = $request['amount'];
         $expense->notes = $request['notes'];
         $expense->date_of_expense = $request['date_of_expense'];
@@ -112,11 +115,11 @@ class ExpenseController extends Controller
     {
         // expenseDocs
         $expense = Expense::with('expenseDocs')->find($id);
-
         $projects = Project::getProjects();
         $expenseCategories = ExpenseCategory::getExpenseCategories();
+        $suppliers = Client::where('is_supplier', true)->select('id','name')->get();
+        return view('expense.edit', compact('expense', 'projects', 'expenseCategories','suppliers'));
 
-        return view('expense.edit', compact('expense', 'projects', 'expenseCategories'));
     }
 
     /**
@@ -134,6 +137,7 @@ class ExpenseController extends Controller
             $expense->expense_status_id = $request['expense_status_id'];
         }
         $expense->expense_category_id = $request['expense_category_id'];
+        $expense->supplier_id = $request['supplier_id'];
         $expense->update();
 
         $this->upload_expense_docs($expense, $request);

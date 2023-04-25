@@ -133,7 +133,6 @@
          
          <tbody id="input_field">
             <tr >
-            
                <td style="height: 30px;" ><input type="button" id="removerow" class="bg-rose-500 text-white active:bg-rose-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" value="X" ></td>
                <td><input type="text" id="s_no" name="s_no" class="number bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required></td>
                <td><input type="text" id="service_des" name="service_des" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-56 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required></td>
@@ -215,7 +214,7 @@
          </tr>
          <tr>
             <td width="60%"height="70px">
-            <b> Terms & Conditions </b><br>
+            <b>Terms & Conditions </b><br>
                1. Subject to Krishnagiri Jurisdiction
             </td>
          </tr>
