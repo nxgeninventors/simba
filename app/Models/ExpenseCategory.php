@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ExpenseCategory extends Model
 {
     use HasFactory;
+
+    public static function getexpensecategory(){
+        return self::select('id', 'name', 'description')->get();
+    }
 }

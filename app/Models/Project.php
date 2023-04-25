@@ -50,4 +50,10 @@ class Project extends Model
     {
         return $this->hasMany(Expense::class);
     }
+
+   public static function getprojects(){
+    
+      return  self::select('id', 'project_name')->get();
+    
+    }
 }

@@ -33,10 +33,10 @@ class ExpenseController extends Controller
     public function create()
     {
         $user_id = Auth::user()->id;
-        $projects = Project::select('id', 'project_name')->get();
-        $expenseCategories = ExpenseCategory::select('id', 'name', 'description')->get();
-        $expenseStatuses = ExpenseStatus::all();
-        $suppliers = Client::where('is_supplier', true)->select('id','name')->get();
+        $projects = Project::getprojects();
+        $expenseCategories = ExpenseCategory::getexpensecategory();
+        $expenseStatuses = ExpenseStatus::getexpensestatus();
+        $suppliers = Client::getsupplier();
         return view('expense.create', compact('expenseStatuses', 'projects', 'expenseCategories', 'user_id','suppliers'));
     }
 
@@ -116,10 +116,10 @@ class ExpenseController extends Controller
     {
         // expenseDocs
         $expense = Expense::with('expenseDocs')->find($id);
-        $projects = Project::select('id', 'project_name')->get();
-        $expenseCategories = ExpenseCategory::select('id', 'name', 'description')->get();
-        $expenseStatuses = ExpenseStatus::all();
-        $suppliers = Client::where('is_supplier', true)->select('id','name')->get();
+        $projects = Project::getprojects();
+        $expenseCategories = ExpenseCategory::getexpensecategory();
+        $expenseStatuses = ExpenseStatus::getexpensestatus();
+        $suppliers = Client::getsupplier();
 
         return view('expense.edit', compact('expense', 'projects', 'expenseStatuses', 'expenseCategories','suppliers'));
     }
