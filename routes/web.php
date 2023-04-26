@@ -64,7 +64,7 @@ Route::post('details_del', [CompanyController::class, 'details_del']);
 Route::post('company', [CompanyController::class, 'detailssave']);
 
 
-Route::get('accounts',[AccountsController::class, 'account_index']);
-Route::post('accounts',[AccountsController::class, 'account_index'])->name('accounts.account_index');
+Route::get('reports',[AccountsController::class, 'account_index']);
+Route::post('reports',[AccountsController::class, 'account_index'])->name('reports.account_index');
 
 require __DIR__.'/auth.php';

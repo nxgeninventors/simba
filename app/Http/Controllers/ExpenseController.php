@@ -34,7 +34,7 @@ class ExpenseController extends Controller
         $user_id = Auth::user()->id;
         $projects = Project::getProjects();
         $expenseCategories = ExpenseCategory::getExpenseCategories();
-        $suppliers = Client::getsupplier();
+        $suppliers = Client::getSupplier();
         return view('expense.create', compact('projects', 'expenseCategories', 'user_id','suppliers'));
 
     }

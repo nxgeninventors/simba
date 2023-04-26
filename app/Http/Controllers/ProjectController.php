@@ -30,9 +30,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $categories = ProjectCategory::select('id', 'name')->get();
-        $statuses = ProjectStatus::select('id', 'name')->get();
-        $clients = Client::select('id', 'name')->get();
+        $categories = ProjectCategory::getProjectCategory();
+        $statuses = ProjectStatus::getProjectStatus();
+        $clients = Client::getClients();
         $user_id = Auth::user()->id;
         $status_id = 1;
 
@@ -83,9 +83,9 @@ class ProjectController extends Controller
     // public function edit($id)
     public function edit(Project $project)
     {
-        $categories = ProjectCategory::select('id', 'name')->get();
-        $statuses = ProjectStatus::select('id', 'name')->get();
-        $clients = Client::select('id', 'name')->get();
+        $categories = ProjectCategory::getProjectCategory();
+        $statuses = ProjectStatus::getProjectStatus();
+        $clients = Client::getClients();
 
         return view(
             'projects.edit',

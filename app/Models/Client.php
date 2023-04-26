@@ -19,8 +19,11 @@ class Client extends Model
         return $this->hasMany(Clientcontact::class);
     }
 
-    public static function getsupplier(){
-        return self::where('is_supplier', true)->select('id','name')->get();
+    public static function getSupplier()
+    {
+        return self::where('is_supplier', true)
+                    ->select('id','name')
+                    ->get();
     }
     
     public static function getClients()

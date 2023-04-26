@@ -292,8 +292,7 @@ $(document).ready(function(){
             },
             // dataType: "json",
             success: function (data1) {
-                
-
+                document.getElementById('inc_save').innerHTML = "Invoice number  " + $("#invoice_number").val() + "  details added successfully."
             },
             error: function (data) {
             
@@ -317,8 +316,7 @@ $(document).ready(function(){
             },
             dataType: "json",
             success: function (data1) {
-                
-    
+                $('inc_del').text("delete" + invoice_number + "deleted successfully")
             },
             error: function (data) {
                 
