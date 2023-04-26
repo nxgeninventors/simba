@@ -30,8 +30,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $categories = ProjectCategory::getProjectCategory();
-        $statuses = ProjectStatus::getProjectStatus();
+        $categories = ProjectCategory::getProjectCategories();
+        $statuses = ProjectStatus::getProjectStatuses();
         $clients = Client::getClients();
         $user_id = Auth::user()->id;
         $status_id = 1;
@@ -84,7 +84,7 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $categories = ProjectCategory::getProjectCategories();
-        $statuses = ProjectStatus::getProjectStatus();
+        $statuses = ProjectStatus::getProjectStatuses();
         $clients = Client::getClients();
 
         return view(

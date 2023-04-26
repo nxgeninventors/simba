@@ -9,7 +9,7 @@ class ProjectStatus extends Model
 {
     use HasFactory;
 
-    public static function getProjectStatus()
+    public static function getProjectStatuses()
     {
         return self::select('id', 'name')
                     ->orderBy('name', 'asc')

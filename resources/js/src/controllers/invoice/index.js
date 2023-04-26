@@ -316,7 +316,7 @@ $(document).ready(function(){
             },
             dataType: "json",
             success: function (data1) {
-                $('inc_del').text("delete" + invoice_number + "deleted successfully")
+                
             },
             error: function (data) {
                 

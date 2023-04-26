@@ -113,7 +113,7 @@
          </tr>
       </table>
       <div id="inc_save" style="width:90%;color:green;margin: 0 auto;"></div>
-      <div id="inc_del" style="width:90%;color:red;margin: 0 auto;"></div>
+     
       <table id="detailstable" width="90%" border="2" style="border-collapse: collapse;margin: 0 auto">
          <thead>
             <tr align="center" >
