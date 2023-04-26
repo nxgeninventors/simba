@@ -9,7 +9,7 @@ class ProjectCategory extends Model
 {
     use HasFactory;
 
-    public static function getProjectCategory()
+    public static function getProjectCategories()
     {
         return self::select('id', 'name')
                     ->orderBy('name', 'asc')

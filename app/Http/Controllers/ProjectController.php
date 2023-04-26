@@ -83,7 +83,7 @@ class ProjectController extends Controller
     // public function edit($id)
     public function edit(Project $project)
     {
-        $categories = ProjectCategory::getProjectCategory();
+        $categories = ProjectCategory::getProjectCategories();
         $statuses = ProjectStatus::getProjectStatus();
         $clients = Client::getClients();
 

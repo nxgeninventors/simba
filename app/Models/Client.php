@@ -23,6 +23,7 @@ class Client extends Model
     {
         return self::where('is_supplier', true)
                     ->select('id','name')
+                    ->orderBy('name', 'asc')
                     ->get();
     }
     
