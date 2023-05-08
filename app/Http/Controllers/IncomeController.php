@@ -28,7 +28,7 @@ class IncomeController extends Controller
     public function create()
     {
         $user_id = Auth::user()->id;
-        $projects = Project::select('id', 'project_name')->get();
+        $projects = Project::getProjects();
 
         return view('income.create', compact('projects', 'user_id'));
     }
@@ -66,7 +66,7 @@ class IncomeController extends Controller
      */
     public function edit(Income $income)
     {
-        $projects = Project::select('id', 'project_name')->get();
+        $projects = Project::getProjects();
 
         return view('income.edit', compact('income', 'projects'));
     }

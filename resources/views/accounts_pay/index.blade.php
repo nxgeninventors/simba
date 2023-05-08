@@ -27,12 +27,12 @@
 
 
     <div class="flex justify-center gap-6">
-        <form action="{{ route('accounts.account_index') }}" method="post">
+        <form action="{{ route('reports.account_index') }}" method="post">
             @csrf
             <input type="hidden" class="form-control mb-2" id="date_day" name="date_day" value="{{ now()->format('Y-m-d') }}">
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> Today</button>
         </form>
-        <form action="{{ route('accounts.account_index') }}" method="post" class="mb-4">
+        <form action="{{ route('reports.account_index') }}" method="post" class="mb-4">
             @csrf
             <input type="hidden" name="date_week" value="{{ \Carbon\Carbon::now()->subWeek()->startOfWeek()->format('Y-m-d') }}">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
@@ -40,21 +40,21 @@
             </button>
         </form>
 
-        <form action="{{ route('accounts.account_index') }}" method="post" class="mb-4">
+        <form action="{{ route('reports.account_index') }}" method="post" class="mb-4">
             @csrf
             <input type="hidden" name="date_month" value="{{ \Carbon\Carbon::now()->subMonth()->startOfMonth()->format('Y-m-d') }}">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                 Last Month
             </button>
         </form>
-        <form action="{{ route('accounts.account_index') }}" method="post" class="mb-4">
+        <form action="{{ route('reports.account_index') }}" method="post" class="mb-4">
             @csrf
             <input type="hidden" name="date_year" value="{{ \Carbon\Carbon::now()->subYear()->startOfYear()->format('Y-m-d') }}">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                 Last Year
             </button>
         </form>
-        <form action="{{ route('accounts.account_index') }}" method="post" class="mb-4">
+        <form action="{{ route('reports.account_index') }}" method="post" class="mb-4">
             @csrf
             <input type="date" name="date_start">
             <input type="date" name="date_end">
@@ -135,7 +135,5 @@
             <canvas id="myChart"></canvas>
         </div>
     </div>
-
-
 
 </x-base-layout>

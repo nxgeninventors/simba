@@ -9,7 +9,4 @@ class ExpenseStatus extends Model
 {
     use HasFactory;
 
-    public static function getexpensestatus(){
-        return self::all();
-    }
 }

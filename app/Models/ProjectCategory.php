@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ProjectCategory extends Model
 {
     use HasFactory;
+
+    public static function getProjectCategories()
+    {
+        return self::select('id', 'name')
+                    ->orderBy('name', 'asc')
+                    ->get();
+    }
 }
