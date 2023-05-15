@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+use Database\Seeds;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Expense;
@@ -50,5 +51,7 @@ class DatabaseSeeder extends Seeder
             Income::factory()->count(50)->create();
             Expense::factory()->count(50)->create();
         }
+
+        $this->call(PermissionsTableSeeder::class);
     }
 }

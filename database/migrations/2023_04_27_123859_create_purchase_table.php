@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('quotes', function (Blueprint $table) {
+        Schema::create('purchase', function (Blueprint $table) {
             $table->id();
-            $table->string('Invoice_number');
+            $table->string('purchase_number');
             $table->string('invoice_date');
             $table->string('quotation_number');
             $table->string('reference_number');
@@ -43,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quotes');
+        Schema::dropIfExists('purchase');
     }
 };

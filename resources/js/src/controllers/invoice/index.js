@@ -291,18 +291,17 @@ $(document).ready(function(){
             data: rowData
             },
             // dataType: "json",
-            success: function (data1) {
+            success: function () {
                 document.getElementById('inc_save').innerHTML = "Invoice number  " + $("#invoice_number").val() + "  details added successfully."
             },
-            error: function (data) {
+            error: function () {
             
             }
         });
 
     });
 
-    $("#del_btn").click(function (event) {
-        event.preventDefault();
+    $("#del_btn").click(function () {
         
         var invoice_number = $('#invoice_number').val();
         $.ajax({
@@ -315,10 +314,10 @@ $(document).ready(function(){
                 invoice_number: invoice_number,
             },
             dataType: "json",
-            success: function (data1) {
+            success: function () {
                 
             },
-            error: function (data) {
+            error: function () {
                 
             }
         });
