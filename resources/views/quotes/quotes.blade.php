@@ -1,5 +1,6 @@
 <x-base-layout>
       <div id="print">
+         @csrf
       <table table width=90% height=30% border=2 style="border-collapse: collapse;margin: 50px  auto 0;">
          <tr >
             <td  class="header">
@@ -21,8 +22,8 @@
          </tr>
          <tr>
             <td width="50%" style="height: 30px;">
-               <label for="invoice_no" >Invoice No:</label>
-               <span><input type="text" id="invoice_number" name="invoice_number" value="" class="p-2.5 w-full rounded-lg text-gray-900 text-sm"></span>
+               <label for="invoice_no" >Purchase No:</label>
+               <span><input type="text" id="Quotes_number" name="purchase_number" value="" class="p-2.5 w-full rounded-lg text-gray-900 text-sm"></span>
             </td>
             <td width="50%" >
                <label for="Quotation_no" >Quotation No:</label>
@@ -112,7 +113,7 @@
             <th  colspan="2" style="background-color: white;"><b>&nbsp;</b></th>
          </tr>
       </table>
-      <div id="inc_save" style="width:90%;color:green;margin: 0 auto;"></div>
+      <div id="pur_save" style="width:90%;color:green;margin: 0 auto;"></div>
       <table id="detailstable" width="90%" border="2" style="border-collapse: collapse;margin: 0 auto">
          <thead>
             <tr align="center" >
@@ -152,8 +153,8 @@
          </tbody>
       </table>
       <div class="flex gap-6 justify-center mt-1">
-      <button type="submit" id="des_submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">add</button>
-      <button type="submit" id="del_btn" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
+      <button type="submit" id="quotes_submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">add</button>
+      <button type="submit" id="quotes_del_btn" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
       </div>
       <table  width="90%" border="1" style="border-collapse: collapse;margin: 0 auto">
          <tr>
@@ -215,18 +216,16 @@
          </tr>
          <tr>
             <td width="60%"height="70px">
-            <b>Terms & Conditions </b><br>
+            <b>Terms & Conditions</b><br>
                1. Subject to Krishnagiri Jurisdiction
             </td>
          </tr>
       </table>
    </div>
-   <button type="submit" id="full_form" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-      Add invoice
+   <button type="submit" id="Quotes_form" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+      Add quotes
    </button>
-   <input type="hidden" value="{{$client->id}}" name="client_id" id="client_id">
-
-
+   <input type="text" value="{{$client->id}}" name="client_id" id="client_id">
 <style>
    th{
    border: 1px solid black;
@@ -244,4 +243,3 @@
    }
 </style>
 </x-base-layout>
-
